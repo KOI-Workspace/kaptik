@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const PrismBackground = dynamic(
-  () => import("@/components/PrismBackground"),
-  { ssr: false }
-);
+import PrismBackgroundLoader from "@/components/PrismBackgroundLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PrismBackground />
+        <PrismBackgroundLoader />
         {children}
       </body>
     </html>
