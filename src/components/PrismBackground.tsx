@@ -12,11 +12,11 @@ import Prism from "./Prism";
 export default function PrismBackground() {
   return (
     <div
-      className="fixed inset-0 z-0"
+      className="fixed inset-0 z-[1]"
       style={{
         pointerEvents: "none",
-        opacity: 0.55,
-        mixBlendMode: "soft-light",
+        opacity: 0.75,
+        isolation: "isolate",
       }}
       aria-hidden
     >
@@ -26,11 +26,11 @@ export default function PrismBackground() {
         height={3.5}
         baseWidth={5.5}
         scale={3.6}
-        hueShift={0.15}
+        hueShift={0.12}
         colorFrequency={0.7}
         noise={0}
-        glow={0.4}
-        bloom={0.8}
+        glow={0.7}
+        bloom={0.9}
         suspendWhenOffscreen
         transparent
       />
