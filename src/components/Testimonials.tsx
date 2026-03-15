@@ -3,20 +3,10 @@
 import { useState, useCallback } from "react";
 import { testimonials } from "@/lib/mockData";
 
-/** 각 슬롯의 opacity, scale 값 (0=왼쪽 끝, 4=오른쪽 끝, 2=중앙 메인) */
-const SLOT_STYLES = [
-  { opacity: 0.25, scale: 0.9 },
-  { opacity: 0.5, scale: 0.95 },
-  { opacity: 1, scale: 1 },
-  { opacity: 0.5, scale: 0.95 },
-  { opacity: 0.25, scale: 0.9 },
-] as const;
-
 const TOTAL = testimonials.length;
 
 function getTestimonialIndex(currentIndex: number, slotIndex: number): number {
-  const offset = slotIndex - 2;
-  return (currentIndex + offset + TOTAL) % TOTAL;
+  return (currentIndex + slotIndex + TOTAL) % TOTAL;
 }
 
 function getInitials(name: string): string {
@@ -91,27 +81,19 @@ export default function Testimonials() {
             </svg>
           </button>
 
-          <div className="flex flex-1 items-stretch justify-center gap-2 md:gap-4">
-            {[0, 1, 2, 3, 4].map((slotIndex) => {
+          <div className="flex flex-1 items-stretch justify-center gap-4">
+            {[0, 1, 2].map((slotIndex) => {
               const t = testimonials[getTestimonialIndex(currentIndex, slotIndex)];
-              const style = SLOT_STYLES[slotIndex];
-              const isCenter = slotIndex === 2;
-              const isHiddenOnMobile = slotIndex !== 2;
 
               return (
                 <div
                   key={`${currentIndex}-${slotIndex}`}
-                  className={`flex min-w-0 flex-1 flex-col rounded-[22px] px-4 py-5 transition-all duration-300 md:px-6 md:py-7 ${
-                    isHiddenOnMobile ? "hidden md:flex" : ""
-                  }`}
+                  className="flex min-w-0 flex-1 flex-col rounded-[22px] px-5 py-5 transition-all duration-300 md:min-w-[280px] md:max-w-[360px] md:px-6 md:py-6"
                   style={{
                     background: "rgba(255,255,255,0.78)",
                     backdropFilter: "blur(14px)",
-                    boxShadow: isCenter ? "0 18px 48px rgba(17,23,39,0.14)" : "0 12px 30px rgba(26,31,56,0.08)",
-                    border: `1px solid ${isCenter ? "rgba(255,255,255,0.8)" : "rgba(255,255,255,0.55)"}`,
-                    opacity: style.opacity,
-                    transform: `scale(${style.scale})`,
-                    maxWidth: isCenter ? "400px" : "320px",
+                    boxShadow: "0 12px 30px rgba(26,31,56,0.08)",
+                    border: "1px solid rgba(255,255,255,0.55)",
                   }}
                 >
                   {/* 아바타 (이니셜) */}
