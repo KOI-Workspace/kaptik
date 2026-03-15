@@ -77,11 +77,11 @@ export default function Hero({
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full rounded-[999px] px-8 py-4 text-base font-medium transition-all hover:shadow-[var(--shadow-button-hover)] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2 disabled:opacity-45 sm:w-auto"
+                className="w-full rounded-[999px] px-8 py-4 text-base font-medium transition-all hover:opacity-95 hover:shadow-[0 10px 28px rgba(94,76,230,0.35)] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2 disabled:opacity-45 sm:w-auto"
                 style={{
-                  background: "#FFFFFF",
-                  color: "#111327",
-                  boxShadow: "0 6px 20px rgba(17,19,39,0.06)",
+                  background: "#5E4CE6",
+                  color: "#FFFFFF",
+                  boxShadow: "0 6px 20px rgba(94,76,230,0.25)",
                 }}
               >
                 {isSubmitting ? "Joining..." : "Join Waitlist"}
