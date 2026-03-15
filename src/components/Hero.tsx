@@ -1,0 +1,107 @@
+"use client";
+
+import { useState, FormEvent } from "react";
+
+interface HeroProps {
+  onJoinWaitlist: () => void;
+  onHowToUse: () => void;
+  onEmailSubmit?: (email: string) => Promise<void>;
+}
+
+export default function Hero({
+  onJoinWaitlist,
+  onHowToUse,
+  onEmailSubmit,
+}: HeroProps) {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleEmailSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    const trimmed = email.trim().toLowerCase();
+    if (!trimmed) return;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmed)) return;
+
+    setIsSubmitting(true);
+    if (onEmailSubmit) {
+      await onEmailSubmit(trimmed);
+    }
+    setIsSubmitting(false);
+  };
+
+  return (
+    <section
+      className="relative px-6 pt-[150px] pb-24 md:px-12 lg:px-16"
+      style={{ paddingTop: "calc(88px + 80px)" }}
+    >
+      <div className="mx-auto max-w-[1360px]">
+        <div className="flex flex-col items-center text-center">
+          {/* Headline */}
+          <h1
+            className="max-w-[90%] text-[clamp(36px,6vw,72px)] font-bold leading-[1.02] tracking-tight md:max-w-[70%]"
+            style={{
+              color: "#111327",
+              letterSpacing: "-0.04em",
+            }}
+          >
+            For every Kpop moment
+          </h1>
+
+          {/* Subcopy */}
+          <p
+            className="mt-6 max-w-[600px] text-[clamp(18px,2.2vw,22px)] leading-relaxed"
+            style={{ color: "#6F7385" }}
+          >
+            Ultimate Subtitle for Kpop fans
+          </p>
+
+          {/* Email input (textInputHero style - underline only) */}
+          <form
+            onSubmit={handleEmailSubmit}
+            className="mt-10 w-full max-w-[420px]"
+          >
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              disabled={isSubmitting}
+              className="w-full bg-transparent py-3 text-center text-[clamp(20px,2.5vw,28px)] placeholder:text-[#C7BED0] focus:outline-none"
+              style={{
+                color: "#111327",
+                borderBottom: "1px solid rgba(17,19,39,0.24)",
+              }}
+            />
+            <div className="mt-8 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-4">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full rounded-[999px] px-8 py-4 text-base font-medium transition-all hover:shadow-[var(--shadow-button-hover)] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2 disabled:opacity-45 sm:w-auto"
+                style={{
+                  background: "#FFFFFF",
+                  color: "#111327",
+                  boxShadow: "0 6px 20px rgba(17,19,39,0.06)",
+                }}
+              >
+                {isSubmitting ? "Joining..." : "Join Waitlist"}
+              </button>
+              <button
+                type="button"
+                onClick={onHowToUse}
+                className="w-full rounded-[999px] border px-8 py-4 text-base font-medium transition-all hover:border-[rgba(17,19,39,0.25)] hover:bg-black/[0.04] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2 sm:w-auto"
+                style={{
+                  borderColor: "rgba(17,19,39,0.14)",
+                  color: "#111327",
+                  background: "transparent",
+                }}
+              >
+                How to use
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
