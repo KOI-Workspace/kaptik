@@ -89,14 +89,15 @@ export default function Hero({
               <button
                 type="button"
                 onClick={onHowToUse}
-                className="w-full rounded-[999px] border px-8 py-4 text-base font-medium transition-all hover:border-[rgba(17,19,39,0.25)] hover:bg-black/[0.04] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2 sm:w-auto"
+                className="w-full rounded-[999px] border px-8 py-4 text-base font-medium transition-all hover:bg-[rgba(94,76,230,0.14)] hover:border-[rgba(94,76,230,0.55)] hover:shadow-[0 6px 20px rgba(94,76,230,0.12)] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2 sm:w-auto"
                 style={{
-                  borderColor: "rgba(17,19,39,0.14)",
-                  color: "#111327",
-                  background: "transparent",
+                  borderColor: "rgba(94,76,230,0.4)",
+                  color: "#5E4CE6",
+                  background: "rgba(94,76,230,0.08)",
+                  boxShadow: "0 2px 8px rgba(94,76,230,0.06)",
                 }}
               >
-                How to use
+                About
               </button>
             </div>
           </form>
