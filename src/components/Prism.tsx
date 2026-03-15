@@ -20,6 +20,7 @@ const Prism = ({
   bloom = 0.9,
   suspendWhenOffscreen = true,
   timeScale = 0.4,
+  lowerFadeMin = 0.2,
 }: {
   height?: number;
   baseWidth?: number;
@@ -36,6 +37,7 @@ const Prism = ({
   bloom?: number;
   suspendWhenOffscreen?: boolean;
   timeScale?: number;
+  lowerFadeMin?: number;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -61,6 +63,7 @@ const Prism = ({
     const TS = Math.max(0, timeScale ?? 1);
     const HOVSTR = Math.max(0, hoverStrength ?? 1);
     const INERT = Math.max(0, Math.min(1, inertia ?? 0.12));
+    const LOWER_FADE = Math.max(0, Math.min(1, lowerFadeMin ?? 0.2));
 
     const dpr = Math.min(2, window.devicePixelRatio || 1);
     const renderer = new Renderer({
@@ -112,6 +115,7 @@ const Prism = ({
       uniform float uMinAxis;
       uniform float uPxScale;
       uniform float uTimeScale;
+      uniform float uLowerFadeMin;
 
       vec4 tanh4(vec4 x){
         vec4 e2x = exp(2.0*x);
@@ -178,7 +182,11 @@ const Prism = ({
         float L = dot(col, vec3(0.2126, 0.7152, 0.0722));
         col = clamp(mix(vec3(L), col, uSaturation), 0.0, 1.0);
         if(abs(uHueShift) > 0.0001) col = clamp(hueRotation(uHueShift) * col, 0.0, 1.0);
-        gl_FragColor = vec4(col, o.a);
+
+        float vPos = gl_FragCoord.y / iResolution.y;
+        float lowerFade = mix(uLowerFadeMin, 1.0, vPos);
+        col *= lowerFade;
+        gl_FragColor = vec4(col, o.a * lowerFade);
       }
     `;
 
@@ -210,6 +218,7 @@ const Prism = ({
         uMinAxis: { value: Math.min(BASE_HALF, H) },
         uPxScale: { value: 1 / ((gl.drawingBufferHeight || 1) * 0.1 * SCALE) },
         uTimeScale: { value: TS },
+        uLowerFadeMin: { value: LOWER_FADE },
       },
     });
     const mesh = new Mesh(gl, { geometry, program });
@@ -351,7 +360,7 @@ const Prism = ({
     };
   }, [
     height, baseWidth, animationType, glow, noise, offset?.x, offset?.y, scale,
-    transparent, hueShift, colorFrequency, timeScale, hoverStrength, inertia, bloom, suspendWhenOffscreen,
+    transparent, hueShift, colorFrequency, timeScale, hoverStrength, inertia, bloom, suspendWhenOffscreen, lowerFadeMin,
   ]);
 
   return <div className="prism-container" ref={containerRef} />;
