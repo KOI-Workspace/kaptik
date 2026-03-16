@@ -91,7 +91,9 @@ export default function WaitlistModal({
           className="mb-6 text-[15px]"
           style={{ color: "#6F7385" }}
         >
-          Be the first to know when Kaptik launches. Sign up now and we'll email you a promo code when we launch.
+          Be the first to know when Kaptik launches.
+          <br />
+          We'll email you a launch promo code.
         </p>
 
         <form onSubmit={handleSubmit}>
