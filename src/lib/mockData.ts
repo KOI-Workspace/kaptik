@@ -52,7 +52,7 @@ export const testimonials = [
     nationality: "Japan",
     idolFan: "Bunny (NewJeans)",
     quote:
-      "When I watch NewJeans' Fromm lives, Kaptik makes the subtitles so accurate. It actually understands how young Koreans talk—things like '착' and '쩝' get translated properly. As a Japanese Bunny, I finally feel like I'm not missing anything!",
+      "Bubble didn't have translation, but now with Kaptik I am able to understand what they are saying! Works perfectly on my Galaxy.",
   },
   {
     id: "4",
