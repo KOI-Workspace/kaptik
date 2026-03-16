@@ -60,6 +60,12 @@ export default function Hero({
                 Join Waitlist
               </button>
             </div>
+            <p
+              className="mt-4 text-sm"
+              style={{ color: "#6F7385" }}
+            >
+              Sign up now to get an exclusive launch promo code.
+            </p>
           </div>
         </div>
       </div>
