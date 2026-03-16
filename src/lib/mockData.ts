@@ -48,9 +48,9 @@ export const testimonials = [
   },
   {
     id: "3",
-    name: "Yuki Tanaka",
+    name: "Maho Kato",
     nationality: "Japan",
-    idolFan: "Bunny (NewJeans)",
+    idolFan: "NSWER (NMIXX)",
     quote:
       "Bubble didn't have translation, but now with Kaptik I am able to understand what they are saying! Works perfectly on my Galaxy.",
   },
