@@ -14,14 +14,32 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
     <section id="faq" className="relative px-6 py-20 md:px-12 lg:px-16">
       <div className="mx-auto max-w-[800px]">
         <h2
-          className="mb-12 text-center text-[clamp(30px,4vw,42px)] font-bold leading-tight tracking-tight"
+          className="mb-4 text-center text-sm font-semibold uppercase tracking-widest"
+          style={{
+            color: "#6E7284",
+          }}
+        >
+          FAQ
+        </h2>
+
+        <h3
+          className="mb-6 text-center text-[clamp(28px,3.5vw,38px)] font-bold leading-tight tracking-tight"
           style={{
             color: "#111327",
             letterSpacing: "-0.03em",
           }}
         >
-          FAQ
-        </h2>
+          About Kaptik
+        </h3>
+
+        <p
+          className="mx-auto mb-12 max-w-[540px] text-center text-base leading-relaxed"
+          style={{ color: "#6F7385" }}
+        >
+          Find out what Kaptik is, how it connects with your favorite K-pop
+          platforms, and how you can bring studio-quality subtitles into your
+          daily fandom life.
+        </p>
 
         <div className="space-y-2">
           {faqItems.map((item) => (
@@ -92,20 +110,6 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 flex justify-center">
-          <button
-            onClick={onJoinWaitlist}
-            className="rounded-[999px] px-8 py-4 text-base font-medium transition-all hover:opacity-95 hover:shadow-[0 10px 28px rgba(94,76,230,0.35)] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2"
-            style={{
-              background: "#5E4CE6",
-              color: "#FFFFFF",
-              boxShadow: "0 6px 20px rgba(94,76,230,0.25)",
-            }}
-          >
-            Join Waitlist
-          </button>
-        </div>
       </div>
     </section>
   );
