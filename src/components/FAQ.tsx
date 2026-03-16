@@ -13,6 +13,8 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
   const [isThankYouModalOpen, setIsThankYouModalOpen] = useState(false);
   const [questionEmail, setQuestionEmail] = useState("");
   const [questionContent, setQuestionContent] = useState("");
+  const [isLinkCopied, setIsLinkCopied] = useState(false);
+  const shareUrl = "https://kaptik.app";
 
   const handleOpenQuestionModal = () => {
     setIsQuestionModalOpen(true);
@@ -40,6 +42,7 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
     setQuestionContent("");
     setIsQuestionModalOpen(false);
     setIsThankYouModalOpen(true);
+    setIsLinkCopied(false);
   };
 
   return (
@@ -287,7 +290,7 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
           />
 
           <div
-            className="relative w-full max-w-[360px] rounded-[24px] p-7 text-center"
+            className="relative w-full max-w-[440px] rounded-[24px] p-8 text-left"
             style={{
               background: "#FFFFFF",
               boxShadow: "0 18px 48px rgba(17,23,39,0.14)",
@@ -310,16 +313,45 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
               Thank you!
             </h2>
             <p
-              className="mb-8 text-[15px]"
+              className="mb-6 text-[15px]"
               style={{ color: "#6F7385" }}
             >
               We will reach you soon with an answer.
             </p>
 
+            <div className="mb-5">
+              <p
+                className="mb-3 text-[15px] font-medium"
+                style={{ color: "#111327" }}
+              >
+                Would you like to share with friends?
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <div className="flex-1 rounded-[999px] border bg-[#F7F7FB] px-4 py-3 text-sm text-[#6F7385]">
+                  {shareUrl}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (typeof navigator !== "undefined" && navigator.clipboard) {
+                      navigator.clipboard.writeText(shareUrl).then(() => {
+                        setIsLinkCopied(true);
+                        setTimeout(() => setIsLinkCopied(false), 2000);
+                      });
+                    }
+                  }}
+                  className="rounded-[999px] bg-[#111327] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_26px_rgba(11,15,40,0.28)] transition-all hover:-translate-y-[1px] hover:shadow-[0_14px_32px_rgba(11,15,40,0.35)] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2"
+                >
+                  {isLinkCopied ? "Copied!" : "Copy"}
+                </button>
+              </div>
+            </div>
+
             <button
               type="button"
               onClick={handleCloseThankYouModal}
-              className="w-full rounded-[999px] bg-[#111327] px-8 py-4 text-sm font-medium text-white shadow-[0_10px_26px_rgba(11,15,40,0.28)] transition-all hover:-translate-y-[1px] hover:shadow-[0_14px_32px_rgba(11,15,40,0.35)] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2"
+              className="mt-2 w-full rounded-[999px] border px-8 py-4 text-sm font-medium text-[#111327] transition-colors hover:bg-gray-50"
+              style={{ borderColor: "#E2E4F0" }}
             >
               Close
             </button>
