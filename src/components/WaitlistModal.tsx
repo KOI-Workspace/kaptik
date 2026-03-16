@@ -122,8 +122,10 @@ export default function WaitlistModal({
             className="mb-6 text-sm"
             style={{ color: "#6F7385" }}
           >
-            {MOCK_WAITLIST_COUNT.toLocaleString()} people have joined the waitlist
-            so far.
+            <span className="underline">
+              {MOCK_WAITLIST_COUNT.toLocaleString()}
+            </span>{" "}
+            people have joined the waitlist so far.
           </p>
 
           <button
