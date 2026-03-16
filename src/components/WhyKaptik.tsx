@@ -3,7 +3,6 @@
 const beforeProblems = [
   "Cannot tell who is speaking",
   "Literal translation without any context",
-  "No pronunciation information",
 ];
 
 const afterBenefits = [
