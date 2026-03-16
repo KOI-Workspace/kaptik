@@ -25,11 +25,6 @@ export default function LandingPage() {
     document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
-  const handleHeroEmailSubmit = useCallback(async () => {
-    await new Promise((r) => setTimeout(r, 800)); // Mock API
-    setThankYouOpen(true);
-  }, []);
-
   return (
     <div className="relative z-10 min-h-screen">
       <Header onJoinWaitlist={openWaitlist} />
@@ -37,7 +32,6 @@ export default function LandingPage() {
         <Hero
           onJoinWaitlist={openWaitlist}
           onHowToUse={scrollToFeatures}
-          onEmailSubmit={handleHeroEmailSubmit}
         />
         <WhyKaptik />
         <AvailablePlatforms />
