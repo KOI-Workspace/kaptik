@@ -30,7 +30,7 @@ export default function WhyKaptik() {
             letterSpacing: "-0.03em",
           }}
         >
-          Overwhelming improvement in subtitle quality
+          Overwhelming subtitle quality
         </p>
 
         <div className="grid gap-12 lg:grid-cols-2">
