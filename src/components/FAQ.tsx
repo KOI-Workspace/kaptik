@@ -31,7 +31,7 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [isLinkCopied, setIsLinkCopied] = useState(false);
-  const shareUrl = "https://kaptik.app";
+  const shareUrl = "https://kaptik-subtitle.vercel.app/";
 
   const handleOpenQuestionModal = () => {
     setIsQuestionModalOpen(true);
