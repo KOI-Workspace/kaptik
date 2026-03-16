@@ -27,7 +27,7 @@ export default function WhyKaptik() {
           className="mb-16 text-center text-[clamp(16px,2vw,20px)] font-medium leading-relaxed"
           style={{ color: "#6F7385" }}
         >
-          자막 퀄리티의 압도적 개선
+          Overwhelming improvement in subtitle quality
         </p>
 
         <div className="grid gap-12 lg:grid-cols-2">
