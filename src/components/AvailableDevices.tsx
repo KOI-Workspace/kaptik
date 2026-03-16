@@ -23,11 +23,9 @@ export default function AvailableDevices() {
           experience.
         </p>
 
-        <div className="grid gap-8 md:grid-cols-3 md:items-center">
+        <div className="flex flex-col items-center gap-8 md:flex-row md:justify-center md:gap-12">
           {/* PC Browser */}
-          <div
-            className="flex flex-col items-center text-center md:mt-6"
-          >
+          <div className="flex flex-col items-center text-center md:mt-6">
             <div className="mb-4 w-full max-w-[420px] overflow-hidden rounded-3xl md:max-w-[460px]">
               <img
                 src="/available device images/image 5.png"
@@ -47,46 +45,49 @@ export default function AvailableDevices() {
             </p>
           </div>
 
-          {/* iOS */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 w-full max-w-[130px] overflow-hidden rounded-3xl md:max-w-[140px]">
-              <img
-                src="/available device images/ios.png"
-                alt="Kaptik on iOS"
-                className="h-auto w-full object-cover"
-                loading="lazy"
-              />
+          {/* Mobile devices (iOS + Android) */}
+          <div className="flex items-center gap-6">
+            {/* iOS */}
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 w-full max-w-[130px] overflow-hidden rounded-3xl md:max-w-[140px]">
+                <img
+                  src="/available device images/ios.png"
+                  alt="Kaptik on iOS"
+                  className="h-auto w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                className="text-sm font-semibold"
+                style={{
+                  color: "#111327",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                IOS
+              </p>
             </div>
-            <p
-              className="text-sm font-semibold"
-              style={{
-                color: "#111327",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              IOS
-            </p>
-          </div>
 
-          {/* Android */}
-          <div className="flex flex-col items-center text-center">
-            <div className="mb-4 w-full max-w-[130px] overflow-hidden rounded-3xl md:max-w-[140px]">
-              <img
-                src="/available device images/android.png"
-                alt="Kaptik on Android"
-                className="h-auto w-full object-cover"
-                loading="lazy"
-              />
+            {/* Android */}
+            <div className="flex flex-col items-center text-center">
+              <div className="mb-4 w-full max-w-[130px] overflow-hidden rounded-3xl md:max-w-[140px]">
+                <img
+                  src="/available device images/android.png"
+                  alt="Kaptik on Android"
+                  className="h-auto w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <p
+                className="text-sm font-semibold"
+                style={{
+                  color: "#111327",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Android
+              </p>
             </div>
-            <p
-              className="text-sm font-semibold"
-              style={{
-                color: "#111327",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Android
-            </p>
           </div>
         </div>
       </div>
