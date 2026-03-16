@@ -38,7 +38,7 @@ export default function Header({ onJoinWaitlist }: HeaderProps) {
 
         {/* Desktop Nav - Center */}
         <nav
-          className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 md:flex"
+          className="absolute left-[calc(50%+6px)] top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-10 md:flex"
           aria-label="Main navigation"
         >
           <button
