@@ -88,7 +88,13 @@ export default function Testimonials() {
               return (
                 <div
                   key={`${currentIndex}-${slotIndex}`}
-                  className="flex min-w-0 flex-1 flex-col rounded-[22px] px-5 py-5 transition-all duration-300 md:min-w-[280px] md:max-w-[360px] md:px-6 md:py-6"
+                  className={`min-w-0 flex-1 flex-col rounded-[22px] px-5 py-5 transition-all duration-300 md:min-w-[280px] md:max-w-[360px] md:px-6 md:py-6 ${
+                    slotIndex === 0
+                      ? "flex"
+                      : slotIndex === 1
+                        ? "hidden md:flex"
+                        : "hidden lg:flex"
+                  }`}
                   style={{
                     background: "rgba(255,255,255,0.78)",
                     backdropFilter: "blur(14px)",
