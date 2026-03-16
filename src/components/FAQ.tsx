@@ -304,16 +304,16 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
 
             <h2
               id="faq-question-thankyou-title"
-              className="mb-2 text-[20px] font-bold"
+              className="mb-2 text-[22px] font-bold"
               style={{ color: "#111327", letterSpacing: "-0.03em" }}
             >
-              Thanks for your question
+              Thank you!
             </h2>
             <p
-              className="mb-6 text-[14px]"
+              className="mb-8 text-[15px]"
               style={{ color: "#6F7385" }}
             >
-              We’ll reply to your email as soon as we can.
+              We will reach you soon with an answer.
             </p>
 
             <button
