@@ -44,7 +44,7 @@ export default function Testimonials() {
           className="mb-4 text-center text-sm font-semibold uppercase tracking-widest"
           style={{ color: "#6E7284" }}
         >
-          Testimonials
+          Reviews
         </h2>
         <h3
           className="mb-6 text-center text-[clamp(28px,3.5vw,38px)] font-bold leading-tight tracking-tight"
