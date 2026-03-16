@@ -17,6 +17,16 @@ export default function Hero({
     >
       <div className="mx-auto max-w-[1360px]">
         <div className="flex flex-col items-center text-center">
+          {/* 상단 Kaptik 로고 */}
+          <div className="mb-6 flex items-center justify-center">
+            <span
+              className="text-[clamp(28px,4vw,40px)] font-bold tracking-tight"
+              style={{ color: "#111327", letterSpacing: "-0.06em" }}
+            >
+              Kaptik
+            </span>
+          </div>
+
           {/* Headline - SplitText 글자별 애니메이션 */}
           <SplitText
             text="Understand everything your bias says"
