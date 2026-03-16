@@ -1,7 +1,7 @@
 "use client";
 
 const beforeProblems = [
-  "Cannot tell who is singing",
+  "Cannot tell who is speaking",
   "Literal translation without context",
   "No pronunciation information",
 ];
