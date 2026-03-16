@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { faqItems } from "@/lib/mockData";
-import { supabase } from "@/lib/supabaseClient";
+import { getSupabaseClient } from "@/lib/supabaseClient";
 
 // crypto.randomUUID 를 지원하지 않는 브라우저에서도 항상 UUID 형태의 id 를 만들기 위한 헬퍼
 function generateUUID() {
@@ -72,6 +72,7 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
         question: trimmedContent,
       };
 
+      const supabase = getSupabaseClient();
       const { error } = await supabase.from("ask_questions").insert(payload);
 
       if (error) {

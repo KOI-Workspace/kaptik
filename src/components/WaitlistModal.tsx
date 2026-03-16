@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent, useRef, useEffect } from "react";
-import { supabase } from "@/lib/supabaseClient";
+import { getSupabaseClient } from "@/lib/supabaseClient";
 
 interface WaitlistModalProps {
   isOpen: boolean;
@@ -32,6 +32,7 @@ export default function WaitlistModal({
     if (!isOpen) return;
 
     const fetchWaitlistCount = async () => {
+      const supabase = getSupabaseClient();
       const { count, error: countError } = await supabase
         .from("waitlist")
         .select("*", { count: "exact", head: true });
@@ -67,6 +68,7 @@ export default function WaitlistModal({
 
     setIsSubmitting(true);
     try {
+      const supabase = getSupabaseClient();
       const { error: insertError } = await supabase
         .from("waitlist")
         .insert({
