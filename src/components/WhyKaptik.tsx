@@ -15,7 +15,7 @@ export default function WhyKaptik() {
     <section id="features" className="relative px-6 py-20 md:px-12 lg:px-16">
       <div className="mx-auto max-w-[1360px]">
         <h2
-          className="mb-3 text-center text-[clamp(30px,4vw,42px)] font-bold leading-tight tracking-tight"
+          className="mb-16 text-center text-[clamp(30px,4vw,42px)] font-bold leading-tight tracking-tight"
           style={{
             color: "#111327",
             letterSpacing: "-0.03em",
@@ -24,7 +24,7 @@ export default function WhyKaptik() {
           Why Kaptik?
         </h2>
         <p
-          className="mb-16 text-center text-[clamp(16px,2vw,20px)] font-medium leading-relaxed"
+          className="mb-8 text-center text-[clamp(16px,2vw,20px)] font-medium leading-relaxed"
           style={{ color: "#6F7385" }}
         >
           Overwhelming improvement in subtitle quality
