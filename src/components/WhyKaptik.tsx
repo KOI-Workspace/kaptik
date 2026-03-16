@@ -2,7 +2,7 @@
 
 const beforeProblems = [
   "Cannot tell who is speaking",
-  "Literal translation without context",
+  "Literal translation without any context",
   "No pronunciation information",
 ];
 
