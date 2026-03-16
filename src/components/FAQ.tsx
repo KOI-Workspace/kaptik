@@ -146,11 +146,10 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
           <button
             type="button"
             onClick={handleOpenQuestionModal}
-            className="w-full max-w-[260px] rounded-[999px] px-8 py-4 text-base font-medium transition-all hover:opacity-95 hover:shadow-[0_10px_28px_rgba(94,76,230,0.35)] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2"
+            className="w-full max-w-[260px] rounded-[999px] px-8 py-4 text-base font-medium text-white transition-all hover:opacity-95 hover:shadow-[0_10px_28px_rgba(17,19,39,0.35)] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2"
             style={{
-              background: "#5E4CE6",
-              color: "#FFFFFF",
-              boxShadow: "0 6px 20px rgba(94,76,230,0.25)",
+              background: "#111327",
+              boxShadow: "0 6px 20px rgba(17,19,39,0.25)",
             }}
           >
             Ask a question
@@ -320,7 +319,7 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
             <button
               type="button"
               onClick={handleCloseThankYouModal}
-              className="w-full rounded-[999px] bg-[#5E4CE6] px-8 py-4 text-sm font-medium text-white shadow-[0_10px_28px_rgba(94,76,230,0.35)] transition-all hover:-translate-y-[1px] hover:shadow-[0_14px_32px_rgba(94,76,230,0.45)] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2"
+              className="w-full rounded-[999px] bg-[#111327] px-8 py-4 text-sm font-medium text-white shadow-[0_10px_26px_rgba(11,15,40,0.28)] transition-all hover:-translate-y-[1px] hover:shadow-[0_14px_32px_rgba(11,15,40,0.35)] focus:outline-none focus:ring-2 focus:ring-[var(--focus-ring)] focus:ring-offset-2"
             >
               Close
             </button>
