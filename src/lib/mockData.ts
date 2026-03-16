@@ -60,7 +60,7 @@ export const testimonials = [
     nationality: "Philippines",
     idolFan: "CARAT (SEVENTEEN)",
     quote:
-      "SEVENTEEN's going Seventeen episodes are so fun but the subs used to be hit or miss. Kaptik keeps their English when they mix languages—so important! Now I catch every joke. Filipino CARATs, you need this.",
+      "SEVENTEEN's going Seventeen episodes are so fun, and with Kaptik I finally catch every joke.",
   },
   {
     id: "5",
