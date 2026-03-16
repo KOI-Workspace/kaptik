@@ -68,7 +68,7 @@ export const testimonials = [
     nationality: "Germany",
     idolFan: "MOA (TOMORROW X TOGETHER)",
     quote:
-      "I watch TXT on Bubble and YouTube every day, and Kaptik keeps their '사랑해' sounding heartfelt, not stiff.",
+      "I watch TXT on Bubble and YouTube every day, and Kaptik keeps Korean sounding heartfelt, not stiff.",
   },
   {
     id: "6",
