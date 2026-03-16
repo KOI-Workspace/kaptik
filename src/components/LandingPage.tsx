@@ -10,6 +10,7 @@ import FAQ from "./FAQ";
 import Testimonials from "./Testimonials";
 import WaitlistModal from "./WaitlistModal";
 import ThankYouModal from "./ThankYouModal";
+import AskQuestion from "./AskQuestion";
 
 export default function LandingPage() {
   const [waitlistOpen, setWaitlistOpen] = useState(false);
@@ -39,6 +40,7 @@ export default function LandingPage() {
         <AvailablePlatforms />
         <FAQ onJoinWaitlist={openWaitlist} />
         <Testimonials />
+        <AskQuestion />
         <section className="relative px-6 pb-20 pt-6 md:px-12 lg:px-16">
           <div className="mx-auto max-w-[800px]">
             <div className="mt-8 flex justify-center">
@@ -67,3 +69,4 @@ export default function LandingPage() {
     </div>
   );
 }
+

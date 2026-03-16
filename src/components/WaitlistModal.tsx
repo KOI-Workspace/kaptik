@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, FormEvent, useRef, useEffect } from "react";
-import { MOCK_WAITLIST_COUNT, PRIVACY_POLICY_LINK } from "@/lib/mockData";
+import { MOCK_WAITLIST_COUNT } from "@/lib/mockData";
+import { supabase } from "@/lib/supabaseClient";
 
 interface WaitlistModalProps {
   isOpen: boolean;
@@ -45,11 +46,35 @@ export default function WaitlistModal({
 
     setIsSubmitting(true);
     try {
-      // Mock API call - in production would hit real endpoint
-      await new Promise((r) => setTimeout(r, 800));
+      const country = undefined;
+      const locale = typeof navigator !== "undefined" ? navigator.language : undefined;
+      const userAgent =
+        typeof navigator !== "undefined" ? navigator.userAgent : undefined;
+      const referrer =
+        typeof document !== "undefined" && document.referrer
+          ? document.referrer
+          : undefined;
+      const source = "landing_waitlist_modal";
+
+      const { error: insertError } = await supabase.from("waitlist").insert({
+        email: trimmed,
+        country,
+        locale,
+        user_agent: userAgent,
+        referrer,
+        source,
+      });
+
+      if (insertError) {
+        console.error(insertError);
+        setError("Something went wrong. Please try again.");
+        return;
+      }
+
       onSuccess();
       onClose();
-    } catch {
+    } catch (err) {
+      console.error(err);
       setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
