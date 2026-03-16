@@ -26,7 +26,7 @@ export default function AvailableDevices() {
         <div className="flex flex-col items-center gap-8 md:flex-row md:justify-center md:gap-12">
           {/* PC Browser */}
           <div className="flex flex-col items-center text-center md:mt-6">
-            <div className="mb-4 w-full max-w-[420px] overflow-hidden rounded-3xl md:max-w-[460px]">
+            <div className="mb-4 w-full max-w-[320px] overflow-hidden rounded-3xl md:max-w-[360px]">
               <img
                 src="/available device images/image 5.png"
                 alt="Kaptik on PC browser"
