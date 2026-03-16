@@ -43,22 +43,21 @@ export default function AskQuestion() {
       const contextPage =
         typeof window !== "undefined" ? window.location.pathname : undefined;
 
-      const { error: insertError } = await supabase.from("ask_questions").insert({
-        email: trimmedEmail,
-        name: name || null,
-        country,
-        locale,
-        question: trimmedQuestion,
-        context_page: contextPage,
-        extra: {
-          user_agent: userAgent,
-          referrer,
-        },
-      });
+      const { error: insertError } = await supabase
+        .from("ask_questions")
+        .insert({
+          email: trimmedEmail,
+          name: name || null,
+          // 최소 필드만 먼저 저장해서 타입/스키마 이슈를 피함
+          question: trimmedQuestion,
+        });
 
       if (insertError) {
-        console.error(insertError);
-        setError("Something went wrong. Please try again.");
+        console.error("ask_questions insert error:", insertError);
+        setError(
+          insertError.message ||
+            "Something went wrong while saving your question. Please try again."
+        );
         return;
       }
 
