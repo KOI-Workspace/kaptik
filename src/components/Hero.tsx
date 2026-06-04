@@ -1,13 +1,13 @@
 "use client";
 
+import WaitlistForm from "./WaitlistForm";
+
 interface HeroProps {
-  onJoinWaitlist: () => void;
-  onHowToUse: () => void;
+  onWaitlistSuccess: () => void;
 }
 
 export default function Hero({
-  onJoinWaitlist,
-  onHowToUse,
+  onWaitlistSuccess,
 }: HeroProps) {
   return (
     <section
@@ -31,6 +31,7 @@ export default function Hero({
                 Catch every moment in your language.
               </span>
             </h1>
+            <WaitlistForm onSuccess={onWaitlistSuccess} />
           </div>
 
           {/* 오른쪽: 이미지 자리 (추후 이미지로 교체) */}
@@ -46,22 +47,6 @@ export default function Hero({
           </div>
         </div>
 
-        {/* 하단: CTA (추후 이메일 입력칸으로 교체 예정) */}
-        <div className="mt-14 flex flex-col items-center">
-          <button
-            type="button"
-            onClick={onJoinWaitlist}
-            className="w-full max-w-[420px] rounded-[999px] bg-[#0A0A0A] px-8 py-4 text-base font-medium text-white transition-colors hover:bg-[#262626] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 sm:w-auto"
-          >
-            Join Waitlist
-          </button>
-          <p
-            className="mt-4 text-sm"
-            style={{ color: "#7C3AED" }}
-          >
-            Sign up now to get an exclusive launch promo code.
-          </p>
-        </div>
       </div>
     </section>
   );

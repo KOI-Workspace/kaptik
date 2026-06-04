@@ -18,11 +18,7 @@ function generateUUID() {
   });
 }
 
-interface FAQProps {
-  onJoinWaitlist: () => void;
-}
-
-export default function FAQ({ onJoinWaitlist }: FAQProps) {
+export default function FAQ() {
   const [openId, setOpenId] = useState<string | null>(null);
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
   const [isThankYouModalOpen, setIsThankYouModalOpen] = useState(false);
@@ -66,7 +62,7 @@ export default function FAQ({ onJoinWaitlist }: FAQProps) {
 
     setIsSubmitting(true);
     try {
-      const payload: Record<string, any> = {
+      const payload: Record<string, string> = {
         id: generateUUID(),
         email: trimmedEmail,
         question: trimmedContent,

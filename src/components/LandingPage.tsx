@@ -8,46 +8,38 @@ import AvailableDevices from "./AvailableDevices";
 import AvailablePlatforms from "./AvailablePlatforms";
 import FAQ from "./FAQ";
 import Testimonials from "./Testimonials";
-import WaitlistModal from "./WaitlistModal";
 import ThankYouModal from "./ThankYouModal";
 
 export default function LandingPage() {
-  const [waitlistOpen, setWaitlistOpen] = useState(false);
   const [thankYouOpen, setThankYouOpen] = useState(false);
 
-  const openWaitlist = useCallback(() => setWaitlistOpen(true), []);
-  const closeWaitlist = useCallback(() => setWaitlistOpen(false), []);
+  const focusWaitlist = useCallback(() => {
+    const form = document.getElementById("waitlist-form");
+    const input = document.getElementById("waitlist-email") as HTMLInputElement | null;
+
+    form?.scrollIntoView({ behavior: "smooth", block: "center" });
+    window.setTimeout(() => input?.focus(), 350);
+  }, []);
 
   const handleWaitlistSuccess = useCallback(() => {
     setThankYouOpen(true);
   }, []);
 
-  const scrollToFeatures = useCallback(() => {
-    document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
-  }, []);
-
   return (
     <div className="relative z-10 min-h-screen">
-      <Header onJoinWaitlist={openWaitlist} />
+      <Header onJoinWaitlist={focusWaitlist} />
       <main>
         <Hero
-          onJoinWaitlist={openWaitlist}
-          onHowToUse={scrollToFeatures}
+          onWaitlistSuccess={handleWaitlistSuccess}
         />
         <WhyKaptik />
         <AvailableDevices />
         <AvailablePlatforms />
-        <FAQ onJoinWaitlist={openWaitlist} />
+        <FAQ />
         <Testimonials />
       </main>
 
-      <WaitlistModal
-        isOpen={waitlistOpen}
-        onClose={closeWaitlist}
-        onSuccess={handleWaitlistSuccess}
-      />
       <ThankYouModal isOpen={thankYouOpen} onClose={() => setThankYouOpen(false)} />
     </div>
   );
 }
-

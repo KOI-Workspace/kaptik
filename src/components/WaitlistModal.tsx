@@ -77,9 +77,10 @@ export default function WaitlistModal({
         // 이미 같은 이메일이 waitlist 에 있는 경우(UNIQUE 제약조건 위반)는
         // 에러로 보지 말고 "이미 웨이틀리스트에 있음"으로 처리
         // Postgres unique_violation: code 23505
+        const duplicateError = insertError as { code?: string; message?: string };
         if (
-          (insertError as any).code === "23505" ||
-          insertError.message?.includes("duplicate key value")
+          duplicateError.code === "23505" ||
+          duplicateError.message?.includes("duplicate key value")
         ) {
           onSuccess();
           onClose();
