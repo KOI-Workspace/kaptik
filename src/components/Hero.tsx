@@ -1,5 +1,4 @@
 "use client";
-import SplitText from "./SplitText";
 
 interface HeroProps {
   onJoinWaitlist: () => void;
@@ -12,66 +11,56 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section
-      className="relative px-6 pt-[120px] pb-24 md:px-12 lg:px-16"
-      style={{ paddingTop: "calc(88px + 40px)" }}
+      className="relative px-6 pb-24 md:px-12 lg:px-16"
+      style={{ paddingTop: "calc(88px + 56px)" }}
     >
       <div className="mx-auto max-w-[1360px]">
-        <div className="flex flex-col items-center text-center">
-          {/* 상단 Kaptik 로고 */}
-          <div className="mb-8 flex items-center justify-center">
-            <span
-              className="text-[clamp(56px,12vw,120px)] font-bold tracking-tight"
-              style={{ color: "#0A0A0A", letterSpacing: "-0.06em" }}
+        {/* 상단: 헤드라인 + 이미지 2단 */}
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* 왼쪽: 헤드라인 */}
+          <div className="flex flex-col items-start text-left">
+            <h1
+              className="text-[clamp(34px,5vw,60px)] font-bold leading-[1.06] tracking-tight"
+              style={{
+                color: "#0A0A0A",
+                letterSpacing: "-0.03em",
+              }}
             >
-              Kaptik
-            </span>
+              Sick of confusing K-pop subtitles?{" "}
+              <span style={{ color: "#A3A3A3" }}>
+                Catch every moment in your language.
+              </span>
+            </h1>
           </div>
 
-          {/* Headline - SplitText 글자별 애니메이션 */}
-          <SplitText
-            text="Understand everything your bias says"
-            tag="h1"
-            className="max-w-[90%] text-[clamp(36px,6vw,72px)] font-bold leading-[1.02] tracking-tight md:max-w-[70%]"
-            style={{
-              color: "#0A0A0A",
-              letterSpacing: "-0.04em",
-            }}
-            splitType="chars"
-            delay={50}
-            duration={1.25}
-            ease="power3.out"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="center"
-          />
-
-          {/* Subcopy */}
-          <p
-            className="mt-6 max-w-[600px] text-[clamp(18px,2.2vw,22px)] leading-relaxed"
-            style={{ color: "#525252" }}
-          >
-            Kaptik turns chaotic live subtitles into clear, real-time translation with context, speaker labels, and K-pop-aware accuracy.
-          </p>
-
-          <div className="mt-10 w-full max-w-[420px]">
-            <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-4">
-              <button
-                type="button"
-                onClick={onJoinWaitlist}
-                className="w-full rounded-[999px] bg-[#0A0A0A] px-8 py-4 text-base font-medium text-white transition-colors hover:bg-[#262626] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 sm:w-auto"
-              >
-                Join Waitlist
-              </button>
+          {/* 오른쪽: 이미지 자리 (추후 이미지로 교체) */}
+          <div className="flex justify-center lg:justify-end">
+            <div
+              className="flex aspect-square w-full max-w-[480px] items-center justify-center rounded-[16px] border border-dashed border-[#D4D4D4] bg-[#FAFAFA]"
+              aria-hidden
+            >
+              <span className="text-sm" style={{ color: "#A3A3A3" }}>
+                이미지 자리
+              </span>
             </div>
-            <p
-              className="mt-4 text-sm"
-              style={{ color: "#7C3AED" }}
-            >
-              Sign up now to get an exclusive launch promo code.
-            </p>
           </div>
+        </div>
+
+        {/* 하단: CTA (추후 이메일 입력칸으로 교체 예정) */}
+        <div className="mt-14 flex flex-col items-center">
+          <button
+            type="button"
+            onClick={onJoinWaitlist}
+            className="w-full max-w-[420px] rounded-[999px] bg-[#0A0A0A] px-8 py-4 text-base font-medium text-white transition-colors hover:bg-[#262626] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 sm:w-auto"
+          >
+            Join Waitlist
+          </button>
+          <p
+            className="mt-4 text-sm"
+            style={{ color: "#7C3AED" }}
+          >
+            Sign up now to get an exclusive launch promo code.
+          </p>
         </div>
       </div>
     </section>
