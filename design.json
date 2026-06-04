@@ -1,15 +1,15 @@
 {
   "designSystem": {
     "meta": {
-      "name": "LinKo — Lavender Pulse",
+      "name": "Kaptik — Lavender Pulse",
       "version": "2.0.0",
-      "product": "LinKo (YouTube-based Korean learning platform)",
+      "product": "Kaptik (K-pop real-time subtitle translation service)",
       "customizations": [
-        "Primary: purple #8B5CF6 (active nav, focus ring, inline action buttons)",
+        "Primary: purple #8B5CF6 (focus ring, links, inline action, active state)",
         "Secondary: pink #EC4899 (accent only — never CTA)",
         "Typography: Pretendard Variable (single family)",
         "CTA buttons: near-black #0A0A0A pill (not purple)",
-        "FlashcardTab grammar colors: sanctioned exception — blue/violet/amber/teal/emerald for grammar category distinction"
+        "Landing background: white canvas — no full-page gradients"
       ]
     },
 
@@ -30,26 +30,16 @@
           "950": "#2E1065"
         },
         "usage": {
-          "activeNavLabel": "#8B5CF6",
-          "activeNavIcon": "#8B5CF6",
-          "activeNavBackground": "#F5F3FF",
-          "primaryCtaSurface": "#0F0F12",
+          "primaryCtaSurface": "#0A0A0A",
           "primaryCtaText": "#FFFFFF",
           "inlineActionButton": "#8B5CF6",
           "linkText": "#7C3AED",
           "linkHoverText": "#6D28D9",
-          "selectedDateBackground": "#7C3AED",
-          "selectedDateText": "#FFFFFF",
+          "focusRing": "#8B5CF6",
           "barChartFill": "#7C3AED",
           "successBadgeText": "#5B21B6",
           "successBadgeSurface": "#EDE9FE",
-          "statusDotLive": "#8B5CF6",
-          "activityPillDoneSurface": "#F5F3FF",
-          "activityPillDoneText": "#8B5CF6",
-          "activityPillDoneBorder": "#DDD6FE",
-          "upgradeButtonSurface": "#EDE9FE",
-          "upgradeButtonText": "#6D28D9",
-          "upgradeButtonBorder": "#DDD6FE"
+          "carouselIndicatorActive": "#8B5CF6"
         }
       },
       "secondary": {
@@ -93,7 +83,6 @@
         },
         "usage": {
           "pageBackground": "#FFFFFF",
-          "sidebarBackground": "#FAFAFA",
           "cardSurface": "#FFFFFF",
           "subtleSurface": "#F5F5F5",
           "divider": "#EAEAEA",
@@ -105,10 +94,7 @@
           "textPlaceholder": "#A3A3A3",
           "textInverse": "#FFFFFF",
           "iconDefault": "#525252",
-          "iconMuted": "#A3A3A3",
-          "freePlanBadgeSurface": "#F5F5F5",
-          "freePlanBadgeText": "#737373",
-          "freePlanBadgeBorder": "#EAEAEA"
+          "iconMuted": "#A3A3A3"
         }
       },
       "status": {
@@ -136,45 +122,6 @@
           "text": "#9D174D",
           "icon": "#EC4899"
         }
-      },
-      "grammarCategoryColors": {
-        "note": "FlashcardTab 전용 semantic color. 다른 컴포넌트에 사용 금지.",
-        "preFinal": {
-          "tagBackground": "blue-100 (#DBEAFE)",
-          "tagText": "blue-700 (#1D4ED8)",
-          "panelBackground": "blue-50 (#EFF6FF)",
-          "panelBorder": "blue-200 (#BFDBFE)"
-        },
-        "finalClosing": {
-          "tagBackground": "violet-100 (#EDE9FE)",
-          "tagText": "violet-700 (#6D28D9)",
-          "panelBackground": "violet-50 (#F5F3FF)",
-          "panelBorder": "violet-200 (#DDD6FE)"
-        },
-        "finalConnective": {
-          "tagBackground": "amber-100 (#FEF3C7)",
-          "tagText": "amber-700 (#B45309)",
-          "panelBackground": "amber-50 (#FFFBEB)",
-          "panelBorder": "amber-200 (#FDE68A)"
-        },
-        "finalTransformative": {
-          "tagBackground": "teal-100 (#CCFBF1)",
-          "tagText": "teal-700 (#0F766E)",
-          "panelBackground": "teal-50 (#F0FDFA)",
-          "panelBorder": "teal-200 (#99F6E4)"
-        },
-        "finalAuxiliary": {
-          "tagBackground": "emerald-100 (#D1FAE5)",
-          "tagText": "emerald-700 (#047857)",
-          "panelBackground": "emerald-50 (#ECFDF5)",
-          "panelBorder": "emerald-200 (#A7F3D0)"
-        },
-        "stemChange": {
-          "tagBackground": "neutral-100 (#F5F5F5)",
-          "tagText": "neutral-600 (#525252)",
-          "panelBackground": "neutral-50 (#FAFAFA)",
-          "panelBorder": "neutral-200 (#EAEAEA)"
-        }
       }
     },
 
@@ -191,17 +138,17 @@
         "bold": 700
       },
       "scale": {
-        "displayLarge":  { "size": "32px", "lineHeight": "40px", "weight": 700, "letterSpacing": "-0.02em", "usage": "히어로 헤드라인 (예: Which video will you learn Korean today?)" },
+        "displayLarge":  { "size": "32px", "lineHeight": "40px", "weight": 700, "letterSpacing": "-0.02em", "usage": "히어로 헤드라인" },
         "displayMedium": { "size": "24px", "lineHeight": "32px", "weight": 700, "letterSpacing": "-0.01em", "usage": "섹션 타이틀" },
-        "headingLarge":  { "size": "20px", "lineHeight": "28px", "weight": 600, "usage": "카드/패널 제목, 섹션 헤더 (My Lessons, Recommendations)" },
-        "headingMedium": { "size": "16px", "lineHeight": "24px", "weight": 600, "usage": "메뉴 그룹 헤더" },
-        "headingSmall":  { "size": "14px", "lineHeight": "20px", "weight": 600, "usage": "카드 타이틀, 사이드바 카테고리" },
+        "headingLarge":  { "size": "20px", "lineHeight": "28px", "weight": 600, "usage": "카드/패널 제목, 섹션 헤더" },
+        "headingMedium": { "size": "16px", "lineHeight": "24px", "weight": 600, "usage": "그룹 헤더" },
+        "headingSmall":  { "size": "14px", "lineHeight": "20px", "weight": 600, "usage": "카드 타이틀" },
         "bodyLarge":     { "size": "16px", "lineHeight": "24px", "weight": 400, "usage": "본문 기본 (긴 문장)" },
-        "bodyMedium":    { "size": "14px", "lineHeight": "20px", "weight": 400, "usage": "사이드바 메뉴 라벨, 일반 UI 텍스트" },
+        "bodyMedium":    { "size": "14px", "lineHeight": "20px", "weight": 400, "usage": "일반 UI 텍스트" },
         "bodySmall":     { "size": "13px", "lineHeight": "18px", "weight": 400, "usage": "보조 정보, 설명문" },
         "caption":       { "size": "12px", "lineHeight": "16px", "weight": 400, "usage": "메타 정보, 타임스탬프" },
-        "label":         { "size": "12px", "lineHeight": "16px", "weight": 500, "letterSpacing": "0.04em", "textTransform": "uppercase (영문 전용)", "usage": "영문 카테고리 라벨 (Start Learning, In Progress 등). 한글 라벨에는 uppercase 금지" },
-        "micro":         { "size": "10px", "lineHeight": "14px", "weight": 500, "usage": "VideoCard 상태 라벨, ActivityPill 텍스트. 최소 허용 크기" },
+        "label":         { "size": "12px", "lineHeight": "16px", "weight": 500, "letterSpacing": "0.04em", "textTransform": "uppercase (영문 전용)", "usage": "영문 카테고리 라벨. 한글 라벨에는 uppercase 금지" },
+        "micro":         { "size": "10px", "lineHeight": "14px", "weight": 500, "usage": "상태 라벨. 최소 허용 크기" },
         "metric":        { "size": "32px", "lineHeight": "40px", "weight": 600, "usage": "숫자 단독 지표 표시" },
         "buttonLabel":   { "size": "14px", "lineHeight": "20px", "weight": 500, "usage": "버튼 텍스트" }
       }
@@ -227,11 +174,7 @@
         "buttonVertical": "10px",
         "inputHorizontal": "12px",
         "inputVertical": "10px",
-        "cardInner": "12px",
-        "panelInner": "20px",
-        "sidebarItem": "10px 12px",
-        "urlInputContainer": "12px 16px",
-        "tableCell": "12px 16px"
+        "cardInner": "20px"
       }
     },
 
@@ -247,10 +190,6 @@
         "buttonSecondary": "9999px",
         "buttonGhost": "8px",
         "input": "8px",
-        "urlInput": "16px",
-        "urlInputSubmitButton": "8px",
-        "videoCard": "16px",
-        "activityPill": "12px",
         "card": "12px",
         "cardLarge": "16px",
         "panel": "12px",
@@ -276,8 +215,7 @@
         "focusPink": "0 0 0 3px rgba(236, 72, 153, 0.2)"
       },
       "usage": {
-        "videoCard": "sm (hover: md)",
-        "urlInput": "xs",
+        "card": "sm (hover: md)",
         "popover": "lg",
         "modal": "modal",
         "dropdown": "md",
@@ -286,194 +224,6 @@
     },
 
     "componentStyles": {
-      "sidebar": {
-        "surfaceColor": "#FAFAFA",
-        "borderRight": "1px solid #EAEAEA",
-        "widthExpanded": "240px",
-        "widthCollapsed": "64px",
-        "transition": "300ms ease-in-out",
-        "logo": {
-          "fontSize": "18px",
-          "fontWeight": 700,
-          "textColor": "#0A0A0A"
-        },
-        "navItem": {
-          "default": {
-            "textColor": "#525252",
-            "iconColor": "#A3A3A3",
-            "surfaceColor": "transparent",
-            "padding": "10px 12px",
-            "borderRadius": "8px",
-            "fontSize": "14px",
-            "fontWeight": 400,
-            "iconStrokeWidth": "1.5px",
-            "iconSize": "16px"
-          },
-          "hover": {
-            "surfaceColor": "#F5F5F5",
-            "textColor": "#0A0A0A"
-          },
-          "active": {
-            "textColor": "#8B5CF6",
-            "iconColor": "#8B5CF6",
-            "surfaceColor": "#F5F3FF",
-            "fontWeight": 500
-          }
-        },
-        "createButton": {
-          "surfaceColor": "#0A0A0A",
-          "textColor": "#FFFFFF",
-          "hoverSurface": "#262626",
-          "borderRadius": "9999px",
-          "collapsedBorderRadius": "9999px"
-        },
-        "categoryLabel": {
-          "fontSize": "12px",
-          "fontWeight": 500,
-          "textColor": "#A3A3A3",
-          "textTransform": "none",
-          "padding": "16px 12px 8px"
-        },
-        "upgradeButton": {
-          "surfaceColor": "#EDE9FE",
-          "textColor": "#6D28D9",
-          "border": "1px solid #DDD6FE",
-          "borderRadius": "9999px",
-          "hoverSurface": "#DDD6FE",
-          "fontSize": "14px",
-          "fontWeight": 500,
-          "paddingY": "10px"
-        },
-        "userAvatar": {
-          "size": "32px",
-          "borderRadius": "9999px",
-          "surfaceColor": "#EDE9FE",
-          "textColor": "#8B5CF6",
-          "fontSize": "12px",
-          "fontWeight": 700
-        }
-      },
-
-      "videoCard": {
-        "note": "LinKo 핵심 카드 컴포넌트. Generating / Ready 두 가지 상태",
-        "sizeFixed": "240px",
-        "sizeFull": "100%",
-        "borderRadius": "16px",
-        "ready": {
-          "surfaceColor": "#FFFFFF",
-          "border": "1px solid #EAEAEA",
-          "hoverBorder": "#D4D4D4",
-          "hoverShadow": "0 4px 8px rgba(10,10,10,0.06)",
-          "transition": "200ms",
-          "thumbnail": {
-            "aspectRatio": "16 / 9",
-            "backgroundColor": "#F5F5F5",
-            "durationBadge": {
-              "background": "rgba(0,0,0,0.7)",
-              "textColor": "#FFFFFF",
-              "fontSize": "12px",
-              "fontWeight": 500,
-              "borderRadius": "4px",
-              "padding": "2px 6px",
-              "position": "bottom-right"
-            },
-            "playOverlay": {
-              "trigger": "hover",
-              "buttonSize": "40px",
-              "buttonSurface": "rgba(255,255,255,0.9)",
-              "buttonShadow": "0 4px 8px rgba(10,10,10,0.12)",
-              "iconColor": "#262626",
-              "iconSize": "16px"
-            }
-          },
-          "info": {
-            "padding": "12px",
-            "titleFontSize": "14px",
-            "titleFontWeight": 600,
-            "titleColor": "#0A0A0A",
-            "metaFontSize": "12px",
-            "metaColor": "#A3A3A3",
-            "separatorColor": "#D4D4D4"
-          }
-        },
-        "generating": {
-          "surfaceColor": "#171717",
-          "spinnerColor": "#A3A3A3",
-          "primaryTextColor": "#D4D4D4",
-          "secondaryTextColor": "#737373"
-        }
-      },
-
-      "activityPill": {
-        "note": "Flashcard / Watch 탭 완료 여부를 나타내는 독립 pill",
-        "shape": {
-          "borderRadius": "12px",
-          "padding": "6px 10px",
-          "fontSize": "10px",
-          "fontWeight": 500,
-          "iconSize": "12px",
-          "iconStrokeWidth": "1.5px",
-          "gap": "6px"
-        },
-        "done": {
-          "surfaceColor": "#F5F3FF",
-          "textColor": "#8B5CF6",
-          "border": "1px solid #DDD6FE"
-        },
-        "notDone": {
-          "surfaceColor": "#FAFAFA",
-          "textColor": "#A3A3A3",
-          "border": "1px solid #EAEAEA"
-        },
-        "hover": {
-          "borderColor": "#8B5CF6",
-          "textColor": "#8B5CF6",
-          "shadow": "0 1px 3px rgba(10,10,10,0.06)"
-        },
-        "statusLabel": {
-          "fontSize": "10px",
-          "fontWeight": 600,
-          "textTransform": "uppercase",
-          "letterSpacing": "0.06em",
-          "color": "#737373",
-          "note": "영문 전용 uppercase. 예: NOT STARTED / IN PROGRESS / COMPLETED"
-        }
-      },
-
-      "urlInput": {
-        "note": "YouTube URL 입력 + 인라인 제출 버튼. LinKo 주요 진입점",
-        "container": {
-          "surfaceColor": "#FFFFFF",
-          "border": "1px solid #EAEAEA",
-          "borderFocusWithin": "1px solid #8B5CF6",
-          "borderRadius": "16px",
-          "padding": "12px 16px",
-          "shadow": "0 1px 2px rgba(10,10,10,0.04)",
-          "gap": "12px"
-        },
-        "icon": {
-          "size": "20px",
-          "color": "#A3A3A3",
-          "strokeWidth": "1.5px"
-        },
-        "input": {
-          "fontSize": "14px",
-          "textColor": "#0A0A0A",
-          "placeholderColor": "#A3A3A3",
-          "background": "transparent"
-        },
-        "submitButton": {
-          "size": "40px",
-          "borderRadius": "8px",
-          "activeSurface": "#8B5CF6",
-          "activeHoverSurface": "#7C3AED",
-          "inactiveSurface": "#D4D4D4",
-          "iconColor": "#FFFFFF",
-          "iconSize": "16px",
-          "note": "인라인 액션이므로 보라 허용. 독립 CTA 버튼과 다름"
-        }
-      },
-
       "modal": {
         "overlay": {
           "surfaceColor": "rgba(10, 10, 10, 0.55)",
@@ -534,18 +284,6 @@
             "fontWeight": 600,
             "hoverSurface": "#262626"
           },
-          "authButton": {
-            "surfaceColor": "#FAFAFA",
-            "textColor": "#0A0A0A",
-            "border": "1px solid #EAEAEA",
-            "borderRadius": "20px",
-            "padding": "20px 24px",
-            "fontSize": { "mobile": "18px", "desktop": "19px" },
-            "fontWeight": 600,
-            "hoverBorder": "#DDD6FE",
-            "hoverSurface": "#FFFFFF",
-            "hoverShadow": "0 12px 30px rgba(15, 23, 42, 0.08)"
-          },
           "dangerButton": {
             "surfaceColor": "#EF4444",
             "hoverSurface": "#DC2626",
@@ -560,74 +298,6 @@
           "closeOnOverlayClick": true,
           "closeIconDefault": false,
           "note": "기본 닫기: 배경 클릭. X 버튼은 명시적으로 필요한 경우에만"
-        }
-      },
-
-      "topBar": {
-        "height": "56px",
-        "borderBottom": "1px solid #EAEAEA",
-        "search": {
-          "surfaceColor": "#FFFFFF",
-          "border": "1px solid #EAEAEA",
-          "borderRadius": "8px",
-          "placeholderColor": "#A3A3A3",
-          "iconColor": "#A3A3A3"
-        },
-        "iconButton": {
-          "size": "36px",
-          "iconColor": "#525252",
-          "hoverSurface": "#F5F5F5",
-          "borderRadius": "8px"
-        }
-      },
-
-      "heroSection": {
-        "note": "앱 내 각 페이지 상단 URL 입력 히어로 영역",
-        "background": "linear-gradient(to bottom, #F5F3FF, #FFFFFF)",
-        "borderBottom": "1px solid #F5F5F5",
-        "padding": "40px 40px 40px",
-        "eyebrow": {
-          "fontSize": "12px",
-          "fontWeight": 500,
-          "color": "#7C3AED",
-          "letterSpacing": "0.1em",
-          "textTransform": "uppercase"
-        },
-        "title": {
-          "fontSize": "30px",
-          "fontWeight": 700,
-          "color": "#0A0A0A",
-          "lineHeight": 1.2
-        },
-        "description": {
-          "fontSize": "14px",
-          "color": "#737373",
-          "marginTop": "8px",
-          "marginBottom": "28px"
-        },
-        "urlInputMaxWidth": "560px"
-      },
-
-      "metricCard": {
-        "surfaceColor": "#FFFFFF",
-        "borderTreatment": "1px solid #EAEAEA",
-        "borderRadius": "12px",
-        "padding": "20px",
-        "labelText": {
-          "color": "#525252",
-          "fontSize": "14px",
-          "fontWeight": 400
-        },
-        "valueText": {
-          "color": "#0A0A0A",
-          "fontSize": "32px",
-          "fontWeight": 600,
-          "lineHeight": "40px"
-        },
-        "deltaIndicator": {
-          "neutralColor": "#A3A3A3",
-          "positiveColor": "#7C3AED",
-          "negativeColor": "#DC2626"
         }
       },
 
@@ -712,21 +382,6 @@
         }
       },
 
-      "toggle": {
-        "track": {
-          "off": "#D4D4D4",
-          "on": "#8B5CF6",
-          "width": "36px",
-          "height": "20px",
-          "borderRadius": "9999px"
-        },
-        "thumb": {
-          "surfaceColor": "#FFFFFF",
-          "size": "16px",
-          "shadow": "0 1px 2px rgba(10, 10, 10, 0.2)"
-        }
-      },
-
       "badge": {
         "default": {
           "surfaceColor": "#F5F5F5",
@@ -750,62 +405,12 @@
           "surfaceColor": "#FEE2E2",
           "textColor": "#991B1B"
         },
-        "free": {
-          "surfaceColor": "#F5F5F5",
-          "textColor": "#737373",
-          "border": "1px solid #EAEAEA"
-        },
         "shape": {
           "borderRadius": "9999px",
           "padding": "2px 10px",
           "fontSize": "12px",
           "fontWeight": 500
         }
-      },
-
-      "table": {
-        "headerRow": {
-          "surfaceColor": "transparent",
-          "textColor": "#525252",
-          "fontSize": "13px",
-          "fontWeight": 500,
-          "borderBottom": "1px solid #EAEAEA",
-          "padding": "12px 16px"
-        },
-        "bodyRow": {
-          "surfaceColor": "#FFFFFF",
-          "borderBottom": "1px solid #F5F5F5",
-          "padding": "16px",
-          "interactionStates": {
-            "hoverSurface": "#FAFAFA"
-          }
-        },
-        "cellText": {
-          "primaryColor": "#0A0A0A",
-          "secondaryColor": "#525252",
-          "fontSize": "14px"
-        }
-      },
-
-      "chart": {
-        "barFillPrimary": "#7C3AED",
-        "barFillSecondary": "#EC4899",
-        "barFillTertiary": "#525252",
-        "axisLabelColor": "#A3A3A3",
-        "gridLineColor": "#F5F5F5",
-        "tooltipSurface": "#0A0A0A",
-        "tooltipText": "#FFFFFF"
-      },
-
-      "alertBanner": {
-        "surfaceColor": "#FAFAFA",
-        "border": "1px solid #EAEAEA",
-        "borderRadius": "12px",
-        "padding": "16px 20px",
-        "iconColor": "#7C3AED",
-        "titleColor": "#0A0A0A",
-        "bodyColor": "#525252",
-        "closeIconColor": "#A3A3A3"
       }
     },
 
@@ -820,12 +425,12 @@
         "xl": "24px"
       },
       "colorRules": {
-        "navigationDefault": "#A3A3A3",
-        "navigationActive": "#8B5CF6",
+        "default": "#525252",
+        "muted": "#A3A3A3",
+        "active": "#8B5CF6",
         "decorativeIllustration": "#EC4899",
         "successCheck": "#7C3AED",
-        "destructive": "#DC2626",
-        "muted": "#A3A3A3"
+        "destructive": "#DC2626"
       }
     },
 
@@ -834,28 +439,25 @@
       "durationSlow": "250ms",
       "durationLayout": "300ms",
       "easing": "ease-out",
-      "note": "200–250ms ease-out이 디폴트. 느릿함은 신뢰감, 빠름은 가벼움. 300ms는 사이드바 토글 등 레이아웃 전환에만"
+      "note": "200–250ms ease-out이 디폴트. 느릿함은 신뢰감, 빠름은 가벼움. 300ms는 레이아웃 전환에만"
     },
 
     "qualityAssurance": {
       "doNot": [
         "CTA에 보라(#8B5CF6) 사용 — 독립 CTA는 #0A0A0A(검정) pill",
         "핑크(#EC4899)를 CTA에 사용 — 핑크는 accent/info 전용",
-        "FlashcardTab Grammar Category 색(blue/amber/teal/emerald)을 다른 컴포넌트에 사용",
         "한글 라벨에 uppercase 적용",
         "Pretendard 외 한글 폰트 혼용",
-        "그린·민트·청록을 신규 추가 (Grammar Colors 예외 제외)",
+        "그린·민트·청록을 신규 추가",
         "카드 안에 카드 중첩",
         "그림자 농도를 shadow-md 이상으로 카드에 적용 (기본: shadow-sm)",
-        "Pretendard weight 400 미만 사용"
+        "Pretendard weight 400 미만 사용",
+        "풀페이지 그라디언트 배경 (흰 캔버스 우선)"
       ],
       "doEnsure": [
         "Pretendard Variable이 모든 UI 렌더 전에 로드됨",
-        "활성 nav item: text-primary + bg-primary-50 (light fill 배경)",
         "모든 status badge: pill(9999px) 형태 통일",
         "포커스 링: primary 보라 0.15–0.30 alpha",
-        "UrlInput: focus-within 시 border-primary 전환",
-        "VideoCard: showLearning=false일 때도 높이 맞춤 위해 invisible 공간 예약",
         "Danger 액션(삭제): 반드시 확인 모달 경유",
         "모달 닫기: 배경 클릭 우선, X 버튼은 선택적",
         "아이콘: strokeWidth 1.5 통일"
@@ -878,12 +480,6 @@
           "background": "#FFFFFF",
           "contrast": "20.45:1",
           "WCAG": "AAA pass"
-        },
-        "activeNavOnPrimary50": {
-          "color": "#8B5CF6",
-          "background": "#F5F3FF",
-          "contrast": "3.1:1",
-          "WCAG": "AA pass (large text / UI component)"
         }
       }
     }
