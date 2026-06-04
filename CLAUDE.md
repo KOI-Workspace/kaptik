@@ -10,9 +10,11 @@ Kaptik 서비스의 웨이트리스트 랜딩페이지. Next.js 기반으로 제
 - **프레임워크**: Next.js 16 (App Router)
 - **언어**: TypeScript
 - **스타일**: Tailwind CSS v4
-- **애니메이션**: GSAP, OGL (WebGL)
+- **폰트**: Pretendard Variable (CDN, layout.tsx에서 로드)
 - **DB**: Supabase (웨이트리스트 이메일 저장)
 - **배포**: Vercel
+
+> 리디자인(Lavender Pulse) 때 화려한 배경/애니메이션을 걷어내며 GSAP·OGL·split-type, Prism(WebGL), SplitText는 제거됨.
 
 ## 프로젝트 구조
 ```
@@ -25,7 +27,7 @@ src/
 ├── components/
 │   ├── LandingPage.tsx       # 페이지 전체 조합 컴포넌트
 │   ├── Header.tsx
-│   ├── Hero.tsx
+│   ├── Hero.tsx              # 헤드라인 + 이미지(자리) 2단, 하단 CTA
 │   ├── WhyKaptik.tsx
 │   ├── AvailableDevices.tsx
 │   ├── AvailablePlatforms.tsx
@@ -34,10 +36,6 @@ src/
 │   ├── WaitlistModal.tsx
 │   ├── ThankYouModal.tsx
 │   ├── LogoLoop.tsx          # 플랫폼 로고 무한 스크롤
-│   ├── Prism.tsx             # WebGL 프리즘 배경 효과
-│   ├── PrismBackground.tsx
-│   ├── PrismBackgroundLoader.tsx
-│   ├── SplitText.tsx         # 텍스트 분할 애니메이션
 │   └── MetaPixel.tsx         # Meta Pixel 트래킹
 └── lib/
     ├── supabaseClient.ts     # Supabase 클라이언트
