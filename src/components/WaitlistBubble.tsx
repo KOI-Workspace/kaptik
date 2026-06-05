@@ -36,6 +36,16 @@ export default function WaitlistBubble() {
     fetchWaitlistCount();
   }, []);
 
+  // 가입이 성공하면 새로고침 없이 인원수를 즉시 +1 한다.
+  useEffect(() => {
+    const handleJoined = () => {
+      setWaitlistCount((current) => (current ?? WAITLIST_DISPLAY_OFFSET) + 1);
+    };
+
+    window.addEventListener("waitlist:joined", handleJoined);
+    return () => window.removeEventListener("waitlist:joined", handleJoined);
+  }, []);
+
   return (
     <p className="waitlist-bubble relative whitespace-nowrap rounded-[999px] border border-[#C4B5FD] bg-[#8B5CF6] px-3.5 py-2 text-center text-[11px] font-medium leading-none text-white shadow-[0_10px_24px_rgba(139,92,246,0.22)] sm:px-5 sm:py-2.5 sm:text-sm">
       <span className="font-bold text-white">
