@@ -52,7 +52,7 @@ const dialogues: Dialogue[] = [
 export default function SpeakerContextDemo() {
   return (
     <div className="flex w-full justify-center">
-      <div className="w-full max-w-[360px] overflow-hidden rounded-[16px] border border-[#E5E5E5] bg-white shadow-[0_22px_60px_rgba(10,10,10,0.16),0_8px_22px_rgba(10,10,10,0.08)] sm:max-w-[390px] md:max-w-[420px] lg:max-w-[480px]">
+      <div className="w-full max-w-[215px] overflow-hidden rounded-[16px] border border-[#E5E5E5] bg-white shadow-[0_22px_60px_rgba(10,10,10,0.16),0_8px_22px_rgba(10,10,10,0.08)] sm:max-w-[390px] md:max-w-[420px] lg:max-w-[480px]">
         <div className="flex items-center gap-3 border-b border-[#ECECEC] bg-[#F6F6F6] px-4 py-2.5">
           <div className="flex gap-1.5">
             <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
