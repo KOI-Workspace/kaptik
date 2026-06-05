@@ -10,11 +10,11 @@ export default function LanguagesDemo() {
   return (
     <div className="flex w-full justify-center">
       {/* 폰 프레임 — LiveSubtitleDemo와 동일한 스타일로 톤을 맞춘다 */}
-      <div className="relative aspect-[9/19.5] h-[min(64vh,560px)] rounded-[34px] bg-[#050505] p-[7px] shadow-[0_28px_80px_rgba(10,10,10,0.24),0_8px_22px_rgba(10,10,10,0.16)] ring-1 ring-[#262626]">
+      <div className="relative aspect-[9/19.5] w-[min(54vw,200px)] rounded-[28px] bg-[#050505] p-[5px] shadow-[0_18px_48px_rgba(10,10,10,0.2),0_8px_22px_rgba(10,10,10,0.12)] ring-1 ring-[#262626] sm:w-[min(42vw,250px)] lg:h-[min(54vh,460px)] lg:w-auto lg:rounded-[34px] lg:p-[7px]">
         {/* 노치 */}
-        <div className="pointer-events-none absolute left-1/2 top-[8px] z-30 h-[20px] w-[30%] -translate-x-1/2 rounded-b-[14px] bg-[#050505]" />
+        <div className="pointer-events-none absolute left-1/2 top-[7px] z-30 h-[16px] w-[30%] -translate-x-1/2 rounded-b-[12px] bg-[#050505] lg:top-[8px] lg:h-[20px] lg:rounded-b-[14px]" />
 
-        <div className="relative h-full overflow-hidden rounded-[28px] bg-black">
+        <div className="relative h-full overflow-hidden rounded-[24px] bg-black lg:rounded-[28px]">
           <video
             className="h-full w-full object-cover"
             autoPlay

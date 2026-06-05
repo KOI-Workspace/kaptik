@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import Link from "next/link";
 import { getSupabaseClient } from "@/lib/supabaseClient";
 
 interface WaitlistFormProps {
@@ -15,6 +16,8 @@ export default function WaitlistForm({ onSuccess }: WaitlistFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
+  const displayCount = waitlistCount ?? WAITLIST_DISPLAY_OFFSET;
+  const spotsLeft = Math.max(WAITLIST_LIMIT - displayCount, 0);
 
   useEffect(() => {
     const fetchWaitlistCount = async () => {
@@ -114,9 +117,9 @@ export default function WaitlistForm({ onSuccess }: WaitlistFormProps) {
     <form
       id="waitlist-form"
       onSubmit={handleSubmit}
-      className="mt-6 w-full max-w-[560px] min-w-0 sm:mt-8"
+      className="mt-5 w-full max-w-[560px] min-w-0 sm:mt-8"
     >
-      <div className="flex min-w-0 flex-col gap-3 rounded-[18px] border border-[#EAEAEA] bg-white p-2 shadow-[0_16px_45px_rgba(10,10,10,0.08)] sm:flex-row">
+      <div className="flex min-w-0 flex-row gap-2 rounded-[18px] border border-[#EAEAEA] bg-white p-2 shadow-[0_16px_45px_rgba(10,10,10,0.08)] sm:gap-3">
         <input
           id="waitlist-email"
           type="email"
@@ -124,14 +127,14 @@ export default function WaitlistForm({ onSuccess }: WaitlistFormProps) {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           disabled={isSubmitting}
-          className="min-h-[48px] min-w-0 flex-1 rounded-[12px] px-4 text-base text-[#0A0A0A] outline-none placeholder:text-[#A3A3A3] disabled:opacity-60 sm:min-h-[52px]"
+          className="min-h-[48px] min-w-0 flex-1 rounded-[12px] px-3 text-[15px] text-[#0A0A0A] outline-none placeholder:text-[#A3A3A3] disabled:opacity-60 sm:min-h-[52px] sm:px-4 sm:text-base"
           aria-invalid={!!error}
           aria-describedby={error ? "waitlist-email-error" : "waitlist-meta"}
         />
         <button
           type="submit"
           disabled={isSubmitting}
-          className="min-h-[48px] shrink-0 rounded-[999px] bg-[#0A0A0A] px-6 text-base font-medium text-white transition-colors hover:bg-[#262626] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-45 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 sm:min-h-[52px]"
+          className="min-h-[48px] shrink-0 whitespace-nowrap rounded-[999px] bg-[#0A0A0A] px-4 text-[13px] font-medium text-white transition-colors hover:bg-[#262626] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-45 focus:outline-none sm:min-h-[52px] sm:px-6 sm:text-base"
         >
           {isSubmitting ? "Joining..." : "Join Waitlist"}
         </button>
@@ -143,16 +146,25 @@ export default function WaitlistForm({ onSuccess }: WaitlistFormProps) {
         </p>
       )}
 
-      <p id="waitlist-meta" className="mt-2 text-sm leading-5 text-[#525252] sm:mt-3 sm:leading-6">
-        <span className="font-semibold text-[#0A0A0A]">
-          {(waitlistCount ?? WAITLIST_DISPLAY_OFFSET).toLocaleString()}
-        </span>{" "}
-        people have joined. Only{" "}
-        <span className="font-semibold text-[#0A0A0A]">
-          {WAITLIST_LIMIT.toLocaleString()}
-        </span>{" "}
-        spots are available until June 30.
-      </p>
+      <div id="waitlist-meta" className="mt-3 flex justify-center sm:mt-4">
+        <p className="waitlist-bubble relative whitespace-nowrap rounded-[999px] border border-[#C4B5FD] bg-[#8B5CF6] px-3.5 py-2 text-center text-[11px] font-medium leading-none text-white shadow-[0_10px_24px_rgba(139,92,246,0.22)] sm:px-5 sm:py-2.5 sm:text-sm">
+          <span className="font-bold text-white">
+            {displayCount.toLocaleString()}
+          </span>{" "}
+          people joined.{" "}
+          <span className="font-bold text-white">
+            {spotsLeft.toLocaleString()}
+          </span>{" "}
+          spots left for the free{" "}
+          <Link
+            href="/pricing"
+            className="font-bold text-white underline underline-offset-2 transition-opacity hover:opacity-80"
+          >
+            Basic Plan
+          </Link>{" "}
+          trial.
+        </p>
+      </div>
     </form>
   );
 }

@@ -14,7 +14,7 @@ export default function Footer() {
               Kaptik
             </Link>
             <p className="max-w-[520px] text-lg leading-relaxed text-[#A3A3A3]">
-              Understand every K-pop moment with high-quality subtitles, speaker
+              Understand every K-pop moment with high quality subtitles, speaker
               context, and translation across 30+ languages.
             </p>
           </div>
@@ -41,12 +41,9 @@ export default function Footer() {
               Contact
             </h2>
             <nav className="flex flex-col gap-4 text-lg text-[#A3A3A3]">
-              <a href="mailto:hello@kaptik.app" className="transition-colors hover:text-white">
-                hello@kaptik.app
+              <a href="mailto:wethekoi@gmail.com" className="transition-colors hover:text-white">
+                wethekoi@gmail.com
               </a>
-              <Link href="/#waitlist-form" className="transition-colors hover:text-white">
-                Join Waitlist
-              </Link>
             </nav>
           </div>
         </div>

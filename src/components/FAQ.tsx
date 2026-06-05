@@ -115,26 +115,17 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="relative px-6 py-20 md:px-12 lg:px-16">
+    <section id="faq" className="relative px-5 py-16 md:px-12 md:py-20 lg:px-16">
       <div className="mx-auto max-w-[800px]">
         <h2
-          className="mb-4 text-center text-sm font-semibold uppercase tracking-widest"
-          style={{
-            color: "#A3A3A3",
-          }}
-        >
-          FAQ
-        </h2>
-
-        <h3
-          className="mb-6 text-center text-[clamp(28px,3.5vw,38px)] font-bold leading-tight tracking-tight"
+          className="mx-auto mb-4 max-w-[820px] text-center text-[clamp(30px,8vw,44px)] font-bold leading-tight tracking-tight md:text-[clamp(34px,4vw,48px)]"
           style={{
             color: "#0A0A0A",
             letterSpacing: "-0.03em",
           }}
         >
           About Kaptik
-        </h3>
+        </h2>
 
         <p
           className="mx-auto mb-12 max-w-[540px] text-center text-base leading-relaxed"

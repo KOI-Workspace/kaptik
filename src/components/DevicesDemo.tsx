@@ -7,23 +7,10 @@
    다른 데모들과 동일한 다크 자막 톤·보라 강조를 재사용한다.
    ────────────────────────────────────────────────────────────── */
 
-// 크롬 확장 팝업에 쓰는 짧은 자막 샘플
-const captions = [
-  { name: "V", color: "#3B82F6", text: "The 40-kilometers march." },
-  { name: "Jin", color: "#EC4899", text: "Ahaha, around this time of year?" },
-];
-
-// 모바일 폰에 표시하는 화자별 자막 — LinkSubtitleDemo의 채팅형 뷰와 톤을 맞춘다.
-const mobileTranscript = [
-  { name: "Jin", initial: "JN", color: "#EC4899", text: "Military, military." },
-  { name: "V", initial: "V", color: "#3B82F6", text: "The 40-kilometers march.", highlight: true },
-  { name: "Jin", initial: "JN", color: "#EC4899", text: "Ahaha, around this time of year?" },
-];
-
 export default function DevicesDemo() {
   return (
     <div className="flex w-full justify-center">
-      <div className="relative w-full max-w-[560px] pb-16 pr-10 sm:pb-12 sm:pr-16">
+      <div className="relative w-full max-w-[320px] pb-14 pr-7 sm:max-w-[420px] sm:pb-12 sm:pr-14 lg:max-w-[500px] lg:pr-16">
         {/* ── PC 브라우저 창 ── */}
         <div className="relative z-10 overflow-hidden rounded-[16px] border border-[#E5E5E5] bg-white shadow-[0_28px_80px_rgba(10,10,10,0.16),0_8px_22px_rgba(10,10,10,0.08)]">
           {/* 브라우저 툴바 */}
@@ -64,25 +51,25 @@ export default function DevicesDemo() {
             </div>
 
             {/* 크롬 확장 팝업 — 확장 아이콘 아래에 떠 있는 형태 */}
-            <div className="absolute right-3 top-3 w-[200px] overflow-hidden rounded-[12px] bg-white shadow-[0_12px_32px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
+            <div className="absolute right-2 top-2 w-[132px] overflow-hidden rounded-[10px] bg-white shadow-[0_12px_32px_rgba(0,0,0,0.35)] ring-1 ring-black/5 sm:right-3 sm:top-3 sm:w-[176px] lg:w-[200px] lg:rounded-[12px]">
               {/* 팝업 헤더 */}
-              <div className="flex items-center gap-2 border-b border-[#F0F0F0] px-3 py-2">
+              <div className="flex items-center gap-1.5 border-b border-[#F0F0F0] px-2 py-1.5 sm:gap-2 sm:px-3 sm:py-2">
                 <span className="flex h-5 w-5 items-center justify-center rounded-[6px] bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9]">
                   <span className="text-[10px] font-extrabold leading-none text-white">k</span>
                 </span>
-                <span className="text-[12px] font-bold tracking-tight text-[#0A0A0A]">Kaptik</span>
+                <span className="text-[10px] font-bold tracking-tight text-[#0A0A0A] sm:text-[12px]">Kaptik</span>
                 <span className="ml-auto flex items-center gap-1">
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#EF4444]" />
-                  <span className="text-[9px] font-bold uppercase tracking-wide text-[#EF4444]">Live</span>
+                  <span className="text-[8px] font-bold uppercase tracking-wide text-[#EF4444] sm:text-[9px]">Live</span>
                 </span>
               </div>
               {/* 자막 리스트 */}
-              <div className="space-y-2 px-3 py-2.5">
-                <div className="text-[11px] leading-snug">
+              <div className="space-y-1.5 px-2 py-2 sm:space-y-2 sm:px-3 sm:py-2.5">
+                <div className="text-[9px] leading-snug sm:text-[11px]">
                   <span className="font-bold text-[#3B82F6]">Martin </span>
                   <span className="text-[#404040]">We are so excited to perform...</span>
                 </div>
-                <div className="text-[11px] leading-snug">
+                <div className="text-[9px] leading-snug sm:text-[11px]">
                   <span className="font-bold text-[#EC4899]">James </span>
                   <span className="text-[#404040]">Hope you guys like it!</span>
                 </div>
@@ -92,20 +79,20 @@ export default function DevicesDemo() {
         </div>
 
         {/* ── 모바일 폰 (앞에 겹쳐 배치) — 데모 영상의 자막 뷰와 유사하게 ── */}
-        <div className="absolute -bottom-2 right-0 z-20 w-[132px] sm:w-[152px]">
+        <div className="absolute -bottom-2 right-0 z-20 w-[96px] sm:w-[132px] lg:w-[152px]">
           <div className="relative aspect-[9/19.5] rounded-[22px] bg-[#050505] p-[5px] shadow-[0_20px_50px_rgba(10,10,10,0.3)] ring-1 ring-[#262626]">
             {/* 노치 */}
             <div className="pointer-events-none absolute left-1/2 top-[6px] z-30 h-[10px] w-[30%] -translate-x-1/2 rounded-b-[8px] bg-[#050505]" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[18px] bg-[#0A0A0A]">
               {/* 상단 앱 헤더 */}
-              <div className="flex items-center gap-1.5 px-2.5 pt-3.5 pb-2">
-                <span className="flex h-3.5 w-3.5 items-center justify-center rounded-[4px] bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9]">
-                  <span className="text-[7px] font-extrabold leading-none text-white">k</span>
+              <div className="flex items-center gap-1 px-2 pt-3 pb-1.5">
+                <span className="flex h-3 w-3 items-center justify-center rounded-[4px] bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9]">
+                  <span className="text-[6px] font-extrabold leading-none text-white">k</span>
                 </span>
-                <span className="text-[8px] font-bold tracking-tight text-white">Kaptik</span>
+                <span className="text-[7px] font-bold tracking-tight text-white">Kaptik</span>
                 <span className="ml-auto flex items-center gap-0.5">
-                  <span className="h-1 w-1 animate-pulse rounded-full bg-[#EF4444]" />
-                  <span className="text-[6px] font-bold uppercase tracking-wide text-[#EF4444]">Live</span>
+                  <span className="h-0.5 w-0.5 animate-pulse rounded-full bg-[#EF4444]" />
+                  <span className="text-[5px] font-bold uppercase tracking-wide text-[#EF4444]">Live</span>
                 </span>
               </div>
 
@@ -117,28 +104,28 @@ export default function DevicesDemo() {
                   className="absolute inset-0 h-full w-full object-cover opacity-90"
                 />
                 {/* Weverse 출처 배지 */}
-                <span className="absolute right-1.5 top-1.5 flex items-center gap-0.5 rounded-[3px] bg-black/55 px-1 py-0.5 backdrop-blur-sm">
-                  <img src="/image/fandom platform logos_png/Weverse_logo 1.png" alt="Weverse" className="h-2 w-2 object-contain" />
-                  <span className="text-[5px] font-semibold uppercase tracking-wide text-white/90">Weverse</span>
+                <span className="absolute right-1 top-1 flex items-center gap-0.5 rounded-[3px] bg-black/55 px-0.5 py-0.5 backdrop-blur-sm">
+                  <img src="/image/fandom platform logos_png/Weverse_logo 1.png" alt="Weverse" className="h-1.5 w-1.5 object-contain" />
+                  <span className="text-[4px] font-semibold uppercase tracking-wide text-white/90">Weverse</span>
                 </span>
               </div>
 
               {/* 화자별 자막 리스트 (채팅형) */}
-              <div className="flex-1 space-y-2 px-2.5 pt-2.5">
-                <div className="flex items-start gap-1.5">
-                  <span className="mt-px flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[6px] font-bold text-white bg-[#3B82F6]">MT</span>
+              <div className="flex-1 space-y-1.5 px-2 pt-2">
+                <div className="flex items-start gap-1">
+                  <span className="mt-px flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#3B82F6] text-[5px] font-bold text-white">MT</span>
                   <div className="min-w-0">
-                    <span className="text-[7px] font-bold text-[#3B82F6]">Martin</span>
-                    <p className="text-[8px] leading-snug font-semibold text-[#A78BFA] underline decoration-[#8B5CF6]/70 decoration-1 underline-offset-1">
+                    <span className="text-[6px] font-bold text-[#3B82F6]">Martin</span>
+                    <p className="text-[7px] leading-snug font-semibold text-[#A78BFA] underline decoration-[#8B5CF6]/70 decoration-1 underline-offset-1">
                       We are so excited to perform...
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-1.5">
-                  <span className="mt-px flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[6px] font-bold text-white bg-[#EC4899]">JM</span>
+                <div className="flex items-start gap-1">
+                  <span className="mt-px flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-[#EC4899] text-[5px] font-bold text-white">JM</span>
                   <div className="min-w-0">
-                    <span className="text-[7px] font-bold text-[#EC4899]">James</span>
-                    <p className="text-[8px] leading-snug font-medium text-white/95">
+                    <span className="text-[6px] font-bold text-[#EC4899]">James</span>
+                    <p className="text-[7px] leading-snug font-medium text-white/95">
                       Hope you guys like it!
                     </p>
                   </div>

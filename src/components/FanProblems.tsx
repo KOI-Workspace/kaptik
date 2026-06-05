@@ -158,10 +158,10 @@ function WeverseMock() {
 
 export default function FanProblems() {
   return (
-    <section id="fan-problems" className="relative scroll-mt-[88px] px-6 py-20 md:px-12 lg:px-16">
+    <section id="fan-problems" className="relative hidden scroll-mt-[64px] px-5 py-16 md:block md:px-12 md:py-20 lg:px-16">
       <div className="mx-auto max-w-[1360px]">
         <h2
-          className="mx-auto mb-12 max-w-[760px] text-center text-[clamp(28px,3.6vw,44px)] font-bold leading-tight tracking-tight"
+          className="mx-auto mb-10 max-w-[820px] text-center text-[clamp(30px,8vw,44px)] font-bold leading-tight tracking-tight md:mb-12 md:text-[clamp(34px,4vw,48px)]"
           style={{ color: "#0A0A0A", letterSpacing: "-0.03em" }}
         >
           These are the subtitle problems you know too well

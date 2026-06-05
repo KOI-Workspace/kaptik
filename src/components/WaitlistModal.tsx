@@ -195,7 +195,7 @@ export default function WaitlistModal({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="mb-4 w-full rounded-[999px] bg-[#0A0A0A] px-8 py-4 text-base font-medium text-white transition-colors hover:bg-[#262626] active:scale-[0.99] disabled:opacity-45 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2"
+            className="mb-4 w-full rounded-[999px] bg-[#0A0A0A] px-8 py-4 text-base font-medium text-white transition-colors hover:bg-[#262626] active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-45 focus:outline-none"
           >
             {isSubmitting ? "Joining..." : "Join Waitlist"}
           </button>

@@ -12,14 +12,16 @@ export default function Hero({
 }: HeroProps) {
   // 하단 가이드 클릭 시 다음 섹션으로 부드럽게 스크롤
   const scrollToNext = useCallback(() => {
-    document
-      .getElementById("fan-problems")
-      ?.scrollIntoView({ behavior: "smooth" });
+    const targetId = window.matchMedia("(min-width: 768px)").matches
+      ? "fan-problems"
+      : "features";
+
+    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
   return (
     <section
-      className="relative flex min-h-svh flex-col overflow-hidden px-6 pb-6 pt-[100px] md:px-12 md:pt-[124px] lg:px-16"
+      className="relative flex min-h-svh flex-col overflow-hidden px-6 pb-6 pt-[76px] md:px-12 md:pt-[96px] lg:px-16"
     >
       <div className="mx-auto flex w-full max-w-[1360px] flex-1 flex-col justify-center">
         {/* 상단: 헤드라인 + 휴대폰 영상 mockup */}
@@ -27,16 +29,16 @@ export default function Hero({
           {/* 왼쪽: 헤드라인 */}
           <div className="flex w-full min-w-0 flex-col items-start text-left max-xl:items-center max-xl:text-center">
             <h1
-              className="w-full max-w-[760px] text-[clamp(30px,7vw,56px)] font-bold leading-[1.08] xl:text-[clamp(48px,5vw,72px)] xl:leading-[1.05]"
+              className="w-full max-w-[760px] text-[clamp(38px,10vw,58px)] font-bold leading-[1.04] xl:text-[clamp(48px,5vw,72px)] xl:leading-[1.05]"
               style={{
                 color: "#0A0A0A",
               }}
             >
-              Sick of confusing K-pop subtitles?{" "}
-              <span style={{ color: "#A3A3A3" }}>
-                Catch every moment in your language.
-              </span>
+              High quality K-pop subtitles, across every platform.
             </h1>
+            <p className="mt-4 max-w-[620px] text-[17px] font-medium leading-relaxed text-[#525252] md:mt-5 md:text-xl">
+              Available on Weverse, YouTube, Instagram, TikTok, and more.
+            </p>
             <WaitlistForm onSuccess={onWaitlistSuccess} />
           </div>
 

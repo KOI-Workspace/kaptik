@@ -25,9 +25,9 @@ export default function Header({ onJoinWaitlist }: HeaderProps) {
 
   return (
     <header
-      className="fixed left-0 right-0 top-0 z-50 h-[88px] border-b border-[#EAEAEA] bg-white"
+      className="fixed left-0 right-0 top-0 z-50 h-[64px] border-b border-[#EAEAEA] bg-white"
     >
-      <div className="relative mx-auto flex h-full max-w-[1360px] items-center justify-between px-8 md:px-12">
+      <div className="relative mx-auto flex h-full max-w-[1360px] items-center justify-between px-5 md:px-10">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2" aria-label="Kaptik Home">
           <span
@@ -73,13 +73,13 @@ export default function Header({ onJoinWaitlist }: HeaderProps) {
         <div className="flex items-center gap-4">
           <Link
             href="/pricing"
-            className="hidden rounded-[999px] border border-[#EAEAEA] bg-white px-6 py-3.5 text-[15px] font-medium text-[#0A0A0A] transition-colors hover:bg-[#FAFAFA] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 sm:block"
+            className="hidden rounded-[999px] border border-[#EAEAEA] bg-white px-5 py-2.5 text-[14px] font-medium text-[#0A0A0A] transition-colors hover:bg-[#FAFAFA] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 sm:block"
           >
             Pricing
           </Link>
           <button
             onClick={onJoinWaitlist}
-            className="hidden rounded-[999px] bg-[#0A0A0A] px-7 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-[#262626] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 disabled:opacity-45 disabled:cursor-not-allowed sm:block"
+            className="hidden rounded-[999px] bg-[#0A0A0A] px-6 py-2.5 text-[14px] font-medium text-white transition-colors hover:bg-[#262626] active:scale-[0.99] focus:outline-none disabled:cursor-not-allowed disabled:opacity-45 sm:block"
           >
             Join Waitlist
           </button>
@@ -121,7 +121,7 @@ export default function Header({ onJoinWaitlist }: HeaderProps) {
       {/* Mobile drawer */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 top-[88px] z-40 bg-white/95 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 top-[64px] z-40 bg-white/95 backdrop-blur-sm md:hidden"
           aria-hidden={!mobileMenuOpen}
         >
           <nav className="flex flex-col gap-6 px-8 py-8">
@@ -145,15 +145,6 @@ export default function Header({ onJoinWaitlist }: HeaderProps) {
               style={{ color: "#525252" }}
             >
               Reviews
-            </button>
-            <button
-              onClick={() => {
-                onJoinWaitlist();
-                setMobileMenuOpen(false);
-              }}
-              className="mt-4 w-fit rounded-[999px] bg-[#0A0A0A] px-7 py-3.5 text-[15px] font-medium text-white transition-colors hover:bg-[#262626] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2"
-            >
-              Join Waitlist
             </button>
             <Link
               href="/pricing"

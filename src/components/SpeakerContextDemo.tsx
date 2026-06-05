@@ -52,37 +52,50 @@ const dialogues: Dialogue[] = [
 export default function SpeakerContextDemo() {
   return (
     <div className="flex w-full justify-center">
-      <div className="w-full max-w-[480px] rounded-[24px] bg-[#0A0A0A] p-6 shadow-[0_28px_80px_rgba(10,10,10,0.24)] ring-1 ring-[#262626] md:p-8">
-        <div className="space-y-8">
+      <div className="w-full max-w-[360px] overflow-hidden rounded-[16px] border border-[#E5E5E5] bg-white shadow-[0_22px_60px_rgba(10,10,10,0.16),0_8px_22px_rgba(10,10,10,0.08)] sm:max-w-[390px] md:max-w-[420px]">
+        <div className="flex items-center gap-3 border-b border-[#ECECEC] bg-[#F6F6F6] px-4 py-2.5">
+          <div className="flex gap-1.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]" />
+            <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
+          </div>
+          <div className="flex min-w-0 flex-1 items-center gap-2 rounded-full bg-white px-3 py-1.5 ring-1 ring-[#E5E5E5]">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" className="shrink-0 text-[#A3A3A3]">
+              <rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" strokeWidth="2" />
+              <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="2" />
+            </svg>
+            <span className="truncate text-[11px] text-[#737373]">kaptik.app/context-demo</span>
+          </div>
+          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-[7px] bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] shadow-sm ring-2 ring-[#DDD6FE]">
+            <span className="text-[12px] font-extrabold leading-none text-white">k</span>
+          </span>
+        </div>
+
+        <div className="space-y-4 bg-[#FCFCFC] px-4 py-4 md:space-y-5 md:px-5 md:py-5">
           {dialogues.map((d) => (
             <div key={d.name}>
-              {/* 화자 헤더 — 아바타 + 이름 */}
-              <div className="mb-2 flex items-center gap-3">
+              <div className="mb-2 flex items-center gap-2">
                 <span
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[12px] font-bold"
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[10px] font-bold sm:h-8 sm:w-8 sm:text-[11px]"
                   style={{
                     color: d.color,
-                    background: `${d.color}1A`, // 12% 불투명 배경
-                    boxShadow: `inset 0 0 0 1.5px ${d.color}66`,
+                    background: `${d.color}14`,
+                    boxShadow: `inset 0 0 0 1.5px ${d.color}55`,
                   }}
                 >
                   {d.initial}
                 </span>
-                <span
-                  className="text-[15px] font-bold"
-                  style={{ color: d.color }}
-                >
+                <span className="text-[13px] font-bold sm:text-[14px]" style={{ color: d.color }}>
                   {d.name}
                 </span>
               </div>
 
-              {/* 대사 — 강조 구간은 보라 밑줄 */}
-              <p className="pl-12 text-[17px] font-semibold leading-snug text-white">
+              <p className="pl-9 text-[13px] font-semibold leading-snug text-[#0A0A0A] sm:pl-10 sm:text-[14px]">
                 {d.line.map((seg, i) =>
                   seg.highlight ? (
                     <span
                       key={i}
-                      className="text-[#A78BFA] underline decoration-[#8B5CF6]/70 decoration-2 underline-offset-[3px]"
+                      className="text-[#8B5CF6] underline decoration-[#8B5CF6]/70 decoration-2 underline-offset-[2px]"
                     >
                       {seg.text}
                     </span>
@@ -92,17 +105,15 @@ export default function SpeakerContextDemo() {
                 )}
               </p>
 
-              {/* cultural context 카드 — 대사 아래에 떠 있는 형태 */}
-              <div className="ml-12 mt-3 rounded-[16px] border border-[#8B5CF6]/40 bg-[#15101F] p-4">
-                <div className="mb-1.5 flex items-start justify-between gap-3">
-                  <h5 className="text-[14px] font-bold text-[#A78BFA]">
+              <div className="ml-0 mt-2 rounded-[12px] border border-[#DDD6FE] bg-white p-2.5 shadow-[0_10px_22px_rgba(109,40,217,0.06)] sm:ml-9 sm:mt-2.5 sm:p-3">
+                <div className="mb-1 flex items-start justify-between gap-2">
+                  <h5 className="text-[12px] font-bold text-[#6D28D9] sm:text-[13px]">
                     {d.context.title}
                   </h5>
-                  {/* 닫기 아이콘 (장식) */}
                   <svg
-                    className="mt-0.5 shrink-0 text-[#6B7280]"
-                    width="14"
-                    height="14"
+                    className="mt-0.5 shrink-0 text-[#A3A3A3]"
+                    width="11"
+                    height="11"
                     viewBox="0 0 24 24"
                     fill="none"
                     aria-hidden
@@ -115,7 +126,7 @@ export default function SpeakerContextDemo() {
                     />
                   </svg>
                 </div>
-                <p className="text-[13.5px] leading-relaxed text-[#D1D5DB]">
+                <p className="text-[11px] leading-relaxed text-[#525252] sm:text-[12px]">
                   {d.context.body}
                 </p>
               </div>

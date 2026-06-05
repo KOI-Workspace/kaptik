@@ -53,11 +53,11 @@ export default function LinkSubtitleDemo() {
   return (
     <div className="flex w-full justify-center">
       {/* 폰 프레임 — LiveSubtitleDemo와 동일한 스타일로 톤을 맞춘다 */}
-      <div className="relative aspect-[9/19.5] h-[min(64vh,560px)] rounded-[34px] bg-[#050505] p-[7px] shadow-[0_28px_80px_rgba(10,10,10,0.24),0_8px_22px_rgba(10,10,10,0.16)] ring-1 ring-[#262626]">
+      <div className="relative aspect-[9/19.5] w-[min(54vw,200px)] rounded-[28px] bg-[#050505] p-[5px] shadow-[0_18px_48px_rgba(10,10,10,0.2),0_8px_22px_rgba(10,10,10,0.12)] ring-1 ring-[#262626] sm:w-[min(42vw,250px)] lg:h-[min(54vh,460px)] lg:w-auto lg:rounded-[34px] lg:p-[7px]">
         {/* 노치 */}
-        <div className="pointer-events-none absolute left-1/2 top-[8px] z-30 h-[20px] w-[30%] -translate-x-1/2 rounded-b-[14px] bg-[#050505]" />
+        <div className="pointer-events-none absolute left-1/2 top-[7px] z-30 h-[16px] w-[30%] -translate-x-1/2 rounded-b-[12px] bg-[#050505] lg:top-[8px] lg:h-[20px] lg:rounded-b-[14px]" />
 
-        <div className="relative h-full overflow-hidden rounded-[28px] bg-white">
+        <div className="relative h-full overflow-hidden rounded-[24px] bg-white lg:rounded-[28px]">
           {/* ── 단계 0~2: Kaptik 앱의 '링크로 자막 만들기' 화면 ── */}
           {phase < 3 && (
             <div className="absolute inset-0 flex flex-col bg-gradient-to-b from-[#F5F3FF] to-white px-5 pt-12">

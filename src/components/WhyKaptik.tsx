@@ -51,10 +51,10 @@ const solutionFeatures = [
 
 export default function WhyKaptik() {
   return (
-    <section id="features" className="relative px-6 py-20 md:px-12 lg:px-16">
-      <div className="mx-auto max-w-[1360px]">
+    <section id="features" className="relative py-16 md:py-20">
+      <div className="mx-auto max-w-[1120px] px-5 md:px-12 lg:px-16">
         <h2
-          className="mb-14 text-center text-[clamp(30px,4vw,48px)] font-bold leading-tight tracking-tight"
+          className="mx-auto mb-8 max-w-[820px] text-center text-[clamp(30px,8vw,44px)] font-bold leading-tight tracking-tight md:mb-12 md:text-[clamp(34px,4vw,48px)]"
           style={{
             color: "#0A0A0A",
             letterSpacing: "-0.03em",
@@ -62,79 +62,74 @@ export default function WhyKaptik() {
         >
           How we solve the problem
         </h2>
+      </div>
 
-        <div className="space-y-16">
-          {solutionFeatures.map((feature) => {
-            // live·link 기능은 단계별 애니메이션 폰 목업을 보여준다.
-            const media =
-              feature.id === "live" ? (
-                <div className="flex w-full items-center justify-center">
-                  <LiveSubtitleDemo />
-                </div>
-              ) : feature.id === "link" ? (
-                <div className="flex w-full items-center justify-center">
-                  <LinkSubtitleDemo />
-                </div>
-              ) : feature.id === "languages" ? (
-                <div className="flex w-full items-center justify-center">
-                  <LanguagesDemo />
-                </div>
-              ) : feature.id === "context" ? (
-                // speaker·context 기능은 대사 + cultural context 카드 UI를 보여준다.
-                <div className="flex w-full items-center justify-center">
-                  <SpeakerContextDemo />
-                </div>
-              ) : feature.id === "devices" ? (
-                // devices 기능은 PC(크롬 확장) + 모바일 목업을 보여준다.
-                <div className="flex w-full items-center justify-center">
-                  <DevicesDemo />
-                </div>
-              ) : (
-                <div
-                  className="flex aspect-[4/3] min-h-[320px] w-full items-center justify-center rounded-[16px] border border-dashed border-[#D4D4D4] bg-[#FAFAFA]"
-                  aria-hidden
-                >
-                  <span className="text-sm text-[#A3A3A3]">이미지 자리</span>
-                </div>
-              );
-
-            const textContent = (
-              <div className="flex flex-col justify-center">
-                <span
-                  className="mb-6 w-fit rounded-[999px] px-5 py-2 text-sm font-semibold"
-                  style={{
-                    background: "#F5F3FF",
-                    color: "#6D28D9",
-                  }}
-                >
-                  {feature.eyebrow}
-                </span>
-                <h3
-                  className="mb-6 text-[clamp(30px,4.2vw,56px)] font-bold leading-[1.05] tracking-tight"
-                  style={{
-                    color: "#0A0A0A",
-                    letterSpacing: "-0.03em",
-                  }}
-                >
-                  {feature.title}
-                </h3>
-                <p className="max-w-[560px] text-lg leading-relaxed text-[#525252]">
-                  {feature.description}
-                </p>
+      <div>
+        {solutionFeatures.map((feature, index) => {
+          // 각 기능별 실제 사용 장면을 보여주는 데모 목업.
+          const media =
+            feature.id === "live" ? (
+              <LiveSubtitleDemo />
+            ) : feature.id === "link" ? (
+              <LinkSubtitleDemo />
+            ) : feature.id === "languages" ? (
+              <LanguagesDemo />
+            ) : feature.id === "context" ? (
+              <SpeakerContextDemo />
+            ) : feature.id === "devices" ? (
+              <DevicesDemo />
+            ) : (
+              <div
+                className="flex aspect-[4/3] min-h-[280px] w-full items-center justify-center rounded-[16px] border border-dashed border-[#D4D4D4] bg-[#FAFAFA]"
+                aria-hidden
+              >
+                <span className="text-sm text-[#A3A3A3]">이미지 자리</span>
               </div>
             );
 
-            return (
-              <article
-                key={feature.title}
-                className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
+          const textContent = (
+            <div className="mx-auto flex max-w-[520px] flex-col items-center text-center md:mx-0 md:items-start md:text-left">
+              <span
+                className="mb-4 w-fit rounded-[999px] px-4 py-1.5 text-xs font-bold md:mb-5 md:px-5 md:py-2 md:text-sm"
+                style={{
+                  background: "#F5F3FF",
+                  color: "#6D28D9",
+                }}
               >
-                {feature.imageSide === "left" ? media : textContent}
-                {feature.imageSide === "left" ? textContent : media}
-              </article>
-            );
-          })}
-        </div>
+                {feature.eyebrow}
+              </span>
+              <h3
+                className="mb-4 text-[clamp(30px,8.4vw,44px)] font-bold leading-[1.03] tracking-tight md:text-[clamp(36px,4vw,52px)]"
+                style={{
+                  color: "#0A0A0A",
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                {feature.title}
+              </h3>
+              <p className="max-w-[460px] text-[15px] leading-relaxed text-[#525252] md:text-base">
+                {feature.description}
+              </p>
+            </div>
+          );
+
+          const textOrder =
+            feature.imageSide === "left" ? "md:order-2" : "md:order-1";
+          const mediaOrder =
+            feature.imageSide === "left" ? "md:order-1" : "md:order-2";
+
+          return (
+            <article
+              key={feature.title}
+              className={`${index % 2 === 0 ? "bg-white" : "bg-[#FAFAFA]"} px-5 py-16 md:px-12 md:py-24 lg:px-16`}
+            >
+              <div className="mx-auto grid max-w-[1120px] items-center gap-10 md:min-h-[520px] md:grid-cols-2 md:gap-14 lg:gap-20">
+                <div className={textOrder}>{textContent}</div>
+                <div className={`flex justify-center ${mediaOrder}`}>{media}</div>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );
