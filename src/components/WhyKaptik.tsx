@@ -99,7 +99,7 @@ export default function WhyKaptik() {
                 {feature.eyebrow}
               </span>
               <h3
-                className="mb-4 whitespace-pre-line text-[clamp(30px,8.4vw,44px)] font-bold leading-[1.03] tracking-tight md:mb-5 md:text-[clamp(40px,4.4vw,60px)]"
+                className="mb-4 whitespace-normal text-[clamp(30px,8.4vw,44px)] font-bold leading-[1.03] tracking-tight md:mb-5 md:whitespace-pre-line md:text-[clamp(40px,4.4vw,60px)]"
                 style={{
                   color: "#0A0A0A",
                   letterSpacing: "-0.03em",

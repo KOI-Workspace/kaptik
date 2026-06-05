@@ -70,7 +70,7 @@ export default function Header({ onJoinWaitlist }: HeaderProps) {
         </nav>
 
         {/* CTA - Right */}
-        <div className="flex items-center gap-4">
+        <div className="relative z-10 flex items-center gap-4">
           <Link
             href="/pricing"
             className="hidden rounded-[999px] border border-[#EAEAEA] bg-white px-5 py-2.5 text-[14px] font-medium text-[#0A0A0A] transition-colors hover:bg-[#FAFAFA] active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 sm:block"
