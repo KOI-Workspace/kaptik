@@ -10,41 +10,41 @@ const solutionFeatures = [
   {
     id: "live",
     eyebrow: "Live subtitles",
-    title: "Follow every live moment without waiting",
+    title: "No more waiting for official subtitles.",
     description:
-      "Kaptik delivers high-quality subtitles alongside K-pop live videos, so global fans can understand what is happening as it happens.",
+      "Get notified when your favorite artists go live on Weverse or YouTube. Watch with high-quality subtitles in real time, and come back anytime, every subtitle is saved for later.",
     imageSide: "right",
   },
   {
     id: "link",
-    eyebrow: "Any video link",
-    title: "Turn any YouTube or TikTok clip into a subtitled video",
+    eyebrow: "On any platform",
+    title: "Paste any link.\nGet subtitles in one click.",
     description:
-      "Paste the link to a video you have always wanted to watch, wait a few minutes, and get polished subtitles ready to follow.",
+      "Kaptik works with videos from YouTube, Instagram, TikTok, and more. Just paste the link and turn any K-pop video into a fully subtitled experience.",
     imageSide: "left",
   },
   {
     id: "context",
-    eyebrow: "Speaker and context",
-    title: "Know who said what and why it matters",
+    eyebrow: "Cultural context",
+    title: "Catch every joke, slang, and hidden meaning your bias says.",
     description:
-      "Kaptik labels speakers and explains fandom slang, cultural references, and hidden nuance that general subtitles often miss.",
+      "Kaptik adds human written explanations from our teammates for jokes, slang, fandom terms, and cultural references that regular subtitles often miss.",
     imageSide: "right",
   },
   {
     id: "languages",
     eyebrow: "30+ languages",
-    title: "Share the same moment in 30+ languages",
+    title: "Watch the content in your own language.",
     description:
-      "Translate subtitles into more than 30 languages so fans around the world can follow K-pop content in their own language.",
+      "Don't wait for English only subtitles. Enjoy K-pop content in your own language and feel every moment the way it's meant to be.",
     imageSide: "left",
   },
   {
     id: "devices",
-    eyebrow: "Any device",
-    title: "Available on any devices",
+    eyebrow: "On any device",
+    title: "Watch anywhere,\non any device.",
     description:
-      "Use Kaptik across desktop browsers, iOS, and Android with the same focused subtitle experience.",
+      "Use Kaptik on iOS, Android, tablets, desktop browsers, and TV with the same subtitle experience wherever you watch.",
     imageSide: "right",
   },
 ];
@@ -88,9 +88,9 @@ export default function WhyKaptik() {
             );
 
           const textContent = (
-            <div className="mx-auto flex max-w-[520px] flex-col items-center text-center md:mx-0 md:items-start md:text-left">
+            <div className="mx-auto flex max-w-[560px] flex-col items-center text-center md:mx-0 md:items-start md:text-left">
               <span
-                className="mb-4 w-fit rounded-[999px] px-4 py-1.5 text-xs font-bold md:mb-5 md:px-5 md:py-2 md:text-sm"
+                className="mb-4 w-fit rounded-[999px] px-4 py-1.5 text-xs font-bold md:mb-5 md:px-5 md:py-2.5 md:text-base"
                 style={{
                   background: "#F5F3FF",
                   color: "#6D28D9",
@@ -99,7 +99,7 @@ export default function WhyKaptik() {
                 {feature.eyebrow}
               </span>
               <h3
-                className="mb-4 text-[clamp(30px,8.4vw,44px)] font-bold leading-[1.03] tracking-tight md:text-[clamp(36px,4vw,52px)]"
+                className="mb-4 whitespace-pre-line text-[clamp(30px,8.4vw,44px)] font-bold leading-[1.03] tracking-tight md:mb-5 md:text-[clamp(40px,4.4vw,60px)]"
                 style={{
                   color: "#0A0A0A",
                   letterSpacing: "-0.03em",
@@ -107,7 +107,7 @@ export default function WhyKaptik() {
               >
                 {feature.title}
               </h3>
-              <p className="max-w-[460px] text-[15px] leading-relaxed text-[#525252] md:text-base">
+              <p className="max-w-[500px] text-[15px] leading-relaxed text-[#525252] md:text-[18px] lg:text-[19px]">
                 {feature.description}
               </p>
             </div>
@@ -123,7 +123,7 @@ export default function WhyKaptik() {
               key={feature.title}
               className={`${index % 2 === 0 ? "bg-white" : "bg-[#FAFAFA]"} px-5 py-16 md:px-12 md:py-24 lg:px-16`}
             >
-              <div className="mx-auto grid max-w-[1120px] items-center gap-10 md:min-h-[520px] md:grid-cols-2 md:gap-14 lg:gap-20">
+              <div className="mx-auto grid max-w-[1280px] items-center gap-10 md:min-h-[560px] md:grid-cols-2 md:gap-16 lg:min-h-[600px] lg:gap-24">
                 <div className={textOrder}>{textContent}</div>
                 <div className={`flex justify-center ${mediaOrder}`}>{media}</div>
               </div>

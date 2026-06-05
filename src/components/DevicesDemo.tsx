@@ -10,7 +10,7 @@
 export default function DevicesDemo() {
   return (
     <div className="flex w-full justify-center">
-      <div className="relative w-full max-w-[320px] pb-14 pr-7 sm:max-w-[420px] sm:pb-12 sm:pr-14 lg:max-w-[500px] lg:pr-16">
+      <div className="relative w-full max-w-[320px] pb-14 pr-7 sm:max-w-[420px] sm:pb-12 sm:pr-14 lg:max-w-[560px] lg:pr-16">
         {/* ── PC 브라우저 창 ── */}
         <div className="relative z-10 overflow-hidden rounded-[16px] border border-[#E5E5E5] bg-white shadow-[0_28px_80px_rgba(10,10,10,0.16),0_8px_22px_rgba(10,10,10,0.08)]">
           {/* 브라우저 툴바 */}
