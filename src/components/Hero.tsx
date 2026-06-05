@@ -49,7 +49,7 @@ export default function Hero({
               {/* 배경 이미지들: 휴대폰 mockup 좌우 가장자리에 직접 붙임 (PNG 여백과 무관하게 양쪽 대칭) */}
               {/* 왼쪽 이미지: right-full로 mockup 왼쪽 끝에 붙이고, 왼쪽으로 갈수록 페이드 아웃 */}
               <div
-                className="pointer-events-none absolute right-full top-1/2 z-0 h-[min(52vh,440px)] w-max -translate-y-1/2 opacity-50 blur-[0.5px] max-xl:hidden"
+                className="pointer-events-none absolute right-full top-1/2 z-0 h-[min(30vh,260px)] w-max -translate-y-1/2 opacity-50 blur-[0.5px] xl:h-[min(52vh,440px)]"
                 style={{
                   maskImage: "linear-gradient(to left, black 40%, transparent 100%)",
                   WebkitMaskImage: "linear-gradient(to left, black 40%, transparent 100%)",
@@ -60,7 +60,7 @@ export default function Hero({
 
               {/* 오른쪽 이미지: left-full로 mockup 오른쪽 끝에 붙이고, 오른쪽으로 갈수록 페이드 아웃 */}
               <div
-                className="pointer-events-none absolute left-full top-1/2 z-0 h-[min(52vh,440px)] w-max -translate-y-1/2 opacity-50 blur-[0.5px] max-xl:hidden"
+                className="pointer-events-none absolute left-full top-1/2 z-0 h-[min(30vh,260px)] w-max -translate-y-1/2 opacity-50 blur-[0.5px] xl:h-[min(52vh,440px)]"
                 style={{
                   maskImage: "linear-gradient(to right, black 40%, transparent 100%)",
                   WebkitMaskImage: "linear-gradient(to right, black 40%, transparent 100%)",

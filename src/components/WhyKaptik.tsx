@@ -1,7 +1,10 @@
 "use client";
 
+import LiveSubtitleDemo from "./LiveSubtitleDemo";
+
 const solutionFeatures = [
   {
+    id: "live",
     eyebrow: "Live subtitles",
     title: "Follow every live moment without waiting",
     description:
@@ -9,6 +12,7 @@ const solutionFeatures = [
     imageSide: "right",
   },
   {
+    id: "link",
     eyebrow: "Any video link",
     title: "Turn any YouTube or TikTok clip into a subtitled video",
     description:
@@ -16,6 +20,7 @@ const solutionFeatures = [
     imageSide: "left",
   },
   {
+    id: "context",
     eyebrow: "Speaker and context",
     title: "Know who said what and why it matters",
     description:
@@ -23,6 +28,7 @@ const solutionFeatures = [
     imageSide: "right",
   },
   {
+    id: "languages",
     eyebrow: "30+ languages",
     title: "Share the same moment in 30+ languages",
     description:
@@ -30,6 +36,7 @@ const solutionFeatures = [
     imageSide: "left",
   },
   {
+    id: "devices",
     eyebrow: "Any device",
     title: "Available on any devices",
     description:
@@ -54,14 +61,20 @@ export default function WhyKaptik() {
 
         <div className="space-y-16">
           {solutionFeatures.map((feature) => {
-            const imagePlaceholder = (
-              <div
-                className="flex aspect-[4/3] min-h-[320px] w-full items-center justify-center rounded-[16px] border border-dashed border-[#D4D4D4] bg-[#FAFAFA]"
-                aria-hidden
-              >
-                <span className="text-sm text-[#A3A3A3]">이미지 자리</span>
-              </div>
-            );
+            // live 기능은 3단계 애니메이션 폰 목업을 보여준다.
+            const media =
+              feature.id === "live" ? (
+                <div className="flex w-full items-center justify-center">
+                  <LiveSubtitleDemo />
+                </div>
+              ) : (
+                <div
+                  className="flex aspect-[4/3] min-h-[320px] w-full items-center justify-center rounded-[16px] border border-dashed border-[#D4D4D4] bg-[#FAFAFA]"
+                  aria-hidden
+                >
+                  <span className="text-sm text-[#A3A3A3]">이미지 자리</span>
+                </div>
+              );
 
             const textContent = (
               <div className="flex flex-col justify-center">
@@ -94,8 +107,8 @@ export default function WhyKaptik() {
                 key={feature.title}
                 className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
               >
-                {feature.imageSide === "left" ? imagePlaceholder : textContent}
-                {feature.imageSide === "left" ? textContent : imagePlaceholder}
+                {feature.imageSide === "left" ? media : textContent}
+                {feature.imageSide === "left" ? textContent : media}
               </article>
             );
           })}

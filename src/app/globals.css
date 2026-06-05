@@ -93,3 +93,40 @@ body {
   font-family: var(--font-sans);
   min-height: 100vh;
 }
+
+/* ===== Live Subtitle 데모(폰 목업) 전용 애니메이션 ===== */
+/* 1) 알림 배너가 위에서 살짝 튕기며 내려옴 */
+@keyframes kdemo-notif-in {
+  0% { transform: translateY(-130%); opacity: 0; }
+  70% { transform: translateY(6%); opacity: 1; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+/* 2) 알림을 누르는 듯한 탭 리플 */
+@keyframes kdemo-ripple {
+  0% { transform: translate(-50%, -50%) scale(0.4); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(2.6); opacity: 0; }
+}
+/* 3) 화면 전환 시 아래에서 부드럽게 떠오름 */
+@keyframes kdemo-rise {
+  0% { transform: translateY(14px) scale(0.98); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+/* 4) 자막이 아래에서 페이드인 */
+@keyframes kdemo-sub-in {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.kdemo-notif-in { animation: kdemo-notif-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.kdemo-ripple { animation: kdemo-ripple 1.4s ease-out infinite; }
+.kdemo-rise { animation: kdemo-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.kdemo-sub-in { animation: kdemo-sub-in 0.45s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .kdemo-notif-in,
+  .kdemo-ripple,
+  .kdemo-rise,
+  .kdemo-sub-in {
+    animation: none;
+  }
+}
