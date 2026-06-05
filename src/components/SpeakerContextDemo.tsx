@@ -52,18 +52,18 @@ const dialogues: Dialogue[] = [
 export default function SpeakerContextDemo() {
   return (
     <div className="flex w-full justify-center">
-      <div className="w-full max-w-[480px] rounded-[24px] bg-[#0A0A0A] p-6 shadow-[0_28px_80px_rgba(10,10,10,0.24)] ring-1 ring-[#262626] md:p-8">
-        <div className="space-y-8">
+      <div className="w-full max-w-[520px] px-2">
+        <div className="space-y-12">
           {dialogues.map((d) => (
-            <div key={d.name}>
+            <div key={d.name} className="flex flex-col items-start">
               {/* 화자 헤더 — 아바타 + 이름 */}
-              <div className="mb-2 flex items-center gap-3">
+              <div className="mb-3 flex items-center gap-3">
                 <span
                   className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[12px] font-bold"
                   style={{
                     color: d.color,
-                    background: `${d.color}1A`, // 12% 불투명 배경
-                    boxShadow: `inset 0 0 0 1.5px ${d.color}66`,
+                    background: `${d.color}22`,
+                    boxShadow: `inset 0 0 0 1.5px ${d.color}88`,
                   }}
                 >
                   {d.initial}
@@ -76,25 +76,32 @@ export default function SpeakerContextDemo() {
                 </span>
               </div>
 
-              {/* 대사 — 강조 구간은 보라 밑줄 */}
-              <p className="pl-12 text-[17px] font-semibold leading-snug text-white">
-                {d.line.map((seg, i) =>
-                  seg.highlight ? (
-                    <span
-                      key={i}
-                      className="text-[#A78BFA] underline decoration-[#8B5CF6]/70 decoration-2 underline-offset-[3px]"
-                    >
-                      {seg.text}
-                    </span>
-                  ) : (
-                    <span key={i}>{seg.text}</span>
-                  )
-                )}
-              </p>
+              {/* 대사 — Kaptik 다크 모드 말풍선 스타일 */}
+              <div 
+                className="ml-2 rounded-2xl rounded-tl-none px-5 py-3.5 shadow-xl border border-white/10 backdrop-blur-md"
+                style={{ 
+                  backgroundColor: "rgba(10, 10, 10, 0.95)",
+                }}
+              >
+                <p className="text-[17px] font-semibold leading-snug text-white">
+                  {d.line.map((seg, i) =>
+                    seg.highlight ? (
+                      <span
+                        key={i}
+                        className="text-[#A78BFA] underline decoration-[#8B5CF6]/70 decoration-2 underline-offset-[4px]"
+                      >
+                        {seg.text}
+                      </span>
+                    ) : (
+                      <span key={i}>{seg.text}</span>
+                    )
+                  )}
+                </p>
+              </div>
 
-              {/* cultural context 카드 — 대사 아래에 떠 있는 형태 */}
-              <div className="ml-12 mt-3 rounded-[16px] border border-[#8B5CF6]/40 bg-[#15101F] p-4">
-                <div className="mb-1.5 flex items-start justify-between gap-3">
+              {/* cultural context 카드 — 이전 스타일로 완전 복구 */}
+              <div className="ml-10 mt-4 w-[92%] rounded-[16px] border border-[#8B5CF6]/40 bg-[#15101F] p-4 shadow-lg">
+                <div className="mb-2 flex items-start justify-between gap-3">
                   <h5 className="text-[14px] font-bold text-[#A78BFA]">
                     {d.context.title}
                   </h5>

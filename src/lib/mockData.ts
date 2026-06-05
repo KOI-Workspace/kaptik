@@ -16,16 +16,10 @@ export const faqItems = [
       "Kaptik works across Bubble, Fromm, Weverse, YouTube, and all other platforms. You can enjoy accurate subtitles wherever you watch K-pop content.",
   },
   {
-    id: "2",
-    question: "Is it free?",
-    answer:
-      "We're working on a pricing plan, but nothing is finalized yet. We'll share details when we launch. Stay tuned!",
-  },
-  {
     id: "3",
     question: "How does Kaptik achieve high translation quality?",
     answer:
-      "We use a K-pop glossary built from fandom vocabulary and slang commonly used by young Koreans. This improves word accuracy significantly. When members speak in English, we detect and keep the English as-is. We also use member voice data for speaker identification, so you always know who's saying what.",
+      "Kaptik recognizes live audio, identifies who is speaking, and enhances translation with a K-pop glossary built from fandom slang and Korean expressions. Live captions may take a few seconds to appear, but you can tap any subtitle to rewind to the exact moment it started so that you never miss the conversation.",
   },
 ] as const;
 

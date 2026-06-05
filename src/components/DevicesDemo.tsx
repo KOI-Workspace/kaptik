@@ -50,7 +50,12 @@ export default function DevicesDemo() {
 
           {/* 영상 영역 */}
           <div className="relative aspect-[16/10] bg-[#0A0A0A]">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1E1B2E] via-[#0A0A0A] to-[#0A0A0A]" />
+            <img 
+              src="/image/herosection_mockupsideimages/cortis.jpg" 
+              alt="Cortis Performance" 
+              className="absolute inset-0 h-full w-full object-cover opacity-60"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1E1B2E]/40 via-[#0A0A0A]/40 to-[#0A0A0A]/40" />
             {/* 재생 버튼 */}
             <span className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/15 backdrop-blur-sm">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
@@ -60,8 +65,8 @@ export default function DevicesDemo() {
             {/* 화면 하단 Kaptik 자막 오버레이 */}
             <div className="absolute inset-x-0 bottom-3 flex justify-center px-4">
               <span className="rounded-[8px] bg-black/65 px-3 py-1.5 text-[12px] font-semibold text-white backdrop-blur-sm">
-                <span className="text-[#60A5FA]">V </span>
-                The <span className="text-[#A78BFA] underline decoration-[#8B5CF6]/70 decoration-2 underline-offset-2">40-kilometers march</span>.
+                <span className="text-[#60A5FA]">Martin </span>
+                We are so excited to perform <span className="text-[#A78BFA] underline decoration-[#8B5CF6]/70 decoration-2 underline-offset-2">our new single</span> for you today!
               </span>
             </div>
 
@@ -80,14 +85,14 @@ export default function DevicesDemo() {
               </div>
               {/* 자막 리스트 */}
               <div className="space-y-2 px-3 py-2.5">
-                {captions.map((c) => (
-                  <div key={c.name} className="text-[11px] leading-snug">
-                    <span className="font-bold" style={{ color: c.color }}>
-                      {c.name}{" "}
-                    </span>
-                    <span className="text-[#404040]">{c.text}</span>
-                  </div>
-                ))}
+                <div className="text-[11px] leading-snug">
+                  <span className="font-bold text-[#3B82F6]">Martin </span>
+                  <span className="text-[#404040]">We are so excited to perform...</span>
+                </div>
+                <div className="text-[11px] leading-snug">
+                  <span className="font-bold text-[#EC4899]">James </span>
+                  <span className="text-[#404040]">Hope you guys like it!</span>
+                </div>
               </div>
             </div>
           </div>
@@ -112,50 +117,44 @@ export default function DevicesDemo() {
               </div>
 
               {/* 영상 썸네일 영역 */}
-              <div className="relative mx-2 aspect-[16/10] overflow-hidden rounded-[8px] bg-gradient-to-br from-[#1E1B2E] to-[#0A0A0A]">
+              <div className="relative mx-2 aspect-[16/10] overflow-hidden rounded-[8px] bg-[#0A0A0A]">
+                <img 
+                  src="/image/herosection_mockupsideimages/cortis.jpg" 
+                  alt="Cortis Live" 
+                  className="absolute inset-0 h-full w-full object-cover opacity-60"
+                />
                 <span className="absolute left-1/2 top-1/2 flex h-5 w-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/15">
                   <svg width="8" height="8" viewBox="0 0 24 24" fill="white">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </span>
-                {/* YouTube 출처 배지 */}
+                {/* Weverse 출처 배지 */}
                 <span className="absolute right-1.5 top-1.5 flex items-center gap-0.5 rounded-[3px] bg-black/55 px-1 py-0.5 backdrop-blur-sm">
-                  <span className="flex h-2 w-2 items-center justify-center rounded-[2px] bg-[#FF0000]">
-                    <svg width="5" height="5" viewBox="0 0 24 24" fill="white">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                  <span className="text-[5px] font-semibold uppercase tracking-wide text-white/90">YouTube</span>
+                  <img src="/image/fandom platform logos_png/Weverse_logo 1.png" alt="Weverse" className="h-2 w-2 object-contain" />
+                  <span className="text-[5px] font-semibold uppercase tracking-wide text-white/90">Weverse</span>
                 </span>
               </div>
 
               {/* 화자별 자막 리스트 (채팅형) */}
               <div className="flex-1 space-y-2 px-2.5 pt-2.5">
-                {mobileTranscript.map((line, i) => (
-                  <div key={`${i}-${line.name}`} className="flex items-start gap-1.5">
-                    {/* 화자 아바타 */}
-                    <span
-                      className="mt-px flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[6px] font-bold text-white"
-                      style={{ background: line.color }}
-                    >
-                      {line.initial}
-                    </span>
-                    <div className="min-w-0">
-                      <span className="text-[7px] font-bold" style={{ color: line.color }}>
-                        {line.name}
-                      </span>
-                      <p
-                        className={`text-[8px] leading-snug ${
-                          line.highlight
-                            ? "font-semibold text-[#A78BFA] underline decoration-[#8B5CF6]/70 decoration-1 underline-offset-1"
-                            : "font-medium text-white/95"
-                        }`}
-                      >
-                        {line.text}
-                      </p>
-                    </div>
+                <div className="flex items-start gap-1.5">
+                  <span className="mt-px flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[6px] font-bold text-white bg-[#3B82F6]">MT</span>
+                  <div className="min-w-0">
+                    <span className="text-[7px] font-bold text-[#3B82F6]">Martin</span>
+                    <p className="text-[8px] leading-snug font-semibold text-[#A78BFA] underline decoration-[#8B5CF6]/70 decoration-1 underline-offset-1">
+                      We are so excited to perform...
+                    </p>
                   </div>
-                ))}
+                </div>
+                <div className="flex items-start gap-1.5">
+                  <span className="mt-px flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[6px] font-bold text-white bg-[#EC4899]">JM</span>
+                  <div className="min-w-0">
+                    <span className="text-[7px] font-bold text-[#EC4899]">James</span>
+                    <p className="text-[8px] leading-snug font-medium text-white/95">
+                      Hope you guys like it!
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
