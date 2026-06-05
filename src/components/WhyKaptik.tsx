@@ -1,6 +1,10 @@
 "use client";
 
 import LiveSubtitleDemo from "./LiveSubtitleDemo";
+import LinkSubtitleDemo from "./LinkSubtitleDemo";
+import LanguagesDemo from "./LanguagesDemo";
+import SpeakerContextDemo from "./SpeakerContextDemo";
+import DevicesDemo from "./DevicesDemo";
 
 const solutionFeatures = [
   {
@@ -61,11 +65,29 @@ export default function WhyKaptik() {
 
         <div className="space-y-16">
           {solutionFeatures.map((feature) => {
-            // live 기능은 3단계 애니메이션 폰 목업을 보여준다.
+            // live·link 기능은 단계별 애니메이션 폰 목업을 보여준다.
             const media =
               feature.id === "live" ? (
                 <div className="flex w-full items-center justify-center">
                   <LiveSubtitleDemo />
+                </div>
+              ) : feature.id === "link" ? (
+                <div className="flex w-full items-center justify-center">
+                  <LinkSubtitleDemo />
+                </div>
+              ) : feature.id === "languages" ? (
+                <div className="flex w-full items-center justify-center">
+                  <LanguagesDemo />
+                </div>
+              ) : feature.id === "context" ? (
+                // speaker·context 기능은 대사 + cultural context 카드 UI를 보여준다.
+                <div className="flex w-full items-center justify-center">
+                  <SpeakerContextDemo />
+                </div>
+              ) : feature.id === "devices" ? (
+                // devices 기능은 PC(크롬 확장) + 모바일 목업을 보여준다.
+                <div className="flex w-full items-center justify-center">
+                  <DevicesDemo />
                 </div>
               ) : (
                 <div

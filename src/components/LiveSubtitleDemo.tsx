@@ -34,23 +34,35 @@ export default function LiveSubtitleDemo() {
         <div className="pointer-events-none absolute left-1/2 top-[8px] z-30 h-[20px] w-[30%] -translate-x-1/2 rounded-b-[14px] bg-[#050505]" />
 
         <div className="relative h-full overflow-hidden rounded-[28px] bg-black">
-          {/* ── 홈 화면(실제 앱 스크린샷) — 알림/영상 단계의 배경으로도 쓰인다 ── */}
-          <Image
-            src="/image/features/home exmaple UI.PNG"
-            alt="Kaptik 홈 화면"
-            fill
-            sizes="(max-width: 1024px) 80vw, 30vw"
-            className="object-cover transition-all duration-500"
-            style={{
-              filter: phase === 0 ? "brightness(0.55) blur(1.5px)" : "none",
-              transform: phase === 1 ? "scale(1)" : "scale(1.02)",
-            }}
-            priority
-          />
+          {/* ── 단계 0 배경: 실제 아이폰 홈 화면 위로 알림이 도착 ──
+              이미지가 없을 때를 대비해 다크 월페이퍼 그라데이션을 깔아둔다. */}
+          {phase === 0 && (
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundColor: "#2b3640",
+                backgroundImage:
+                  "linear-gradient(160deg, rgba(58,74,82,0) 0%, rgba(43,54,64,0) 100%), url('/image/features/iphone-home.png')",
+              }}
+            />
+          )}
+
+          {/* ── 단계 1·2 배경: Kaptik 앱 홈 화면(실제 스크린샷) ── */}
+          {phase !== 0 && (
+            <Image
+              src="/image/features/home exmaple UI.PNG"
+              alt="Kaptik 홈 화면"
+              fill
+              sizes="(max-width: 1024px) 80vw, 30vw"
+              className="object-cover transition-transform duration-500"
+              style={{ transform: phase === 1 ? "scale(1)" : "scale(1.02)" }}
+              priority
+            />
+          )}
 
           {/* ── 단계 0: 푸시 알림 ── */}
           {phase === 0 && (
-            <div className="absolute inset-x-0 top-0 z-20 px-3 pt-9">
+            <div className="absolute inset-x-0 top-0 z-20 px-3 pt-11">
               <div
                 key="notif"
                 className="kdemo-notif-in flex items-start gap-3 rounded-[20px] border border-white/40 bg-white/85 px-3.5 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl"
@@ -91,69 +103,19 @@ export default function LiveSubtitleDemo() {
             </div>
           )}
 
-          {/* ── 단계 2: 라이브 영상 플레이어 + Kaptik 자막 ── */}
+          {/* ── 단계 2: 영상 + 화자별 Kaptik 자막(실제 앱 스크린샷) ── */}
           {phase === 2 && (
             <div key="video" className="kdemo-rise absolute inset-0 z-20 bg-black">
               <Image
-                src="/image/herosection_mockupsideimages/bts1.jpg"
-                alt="BTS 라이브"
+                src="/image/features/firstfeature_finalanimation.PNG"
+                alt="Kaptik 자막 화면 — 화자별 라이브 자막"
                 fill
                 sizes="(max-width: 1024px) 80vw, 30vw"
                 className="object-cover"
+                priority
               />
-              {/* 상하단 그라데이션으로 가독성 확보 */}
-              <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/70 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-
-              {/* 상단 바: 뒤로가기 + LIVE 배지 + 시청자 수 */}
-              <div className="absolute inset-x-0 top-0 flex items-center gap-3 px-4 pt-9">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="text-white">
-                  <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <div className="flex items-center gap-1.5 rounded-md bg-[#EF4444] px-2 py-0.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white" />
-                  <span className="text-[11px] font-bold uppercase tracking-wide text-white">Live</span>
-                </div>
-                <span className="text-[12px] font-medium text-white/90">12.4K watching</span>
-              </div>
-
-              {/* 하단: Kaptik 실시간 자막 */}
-              <div className="absolute inset-x-0 bottom-0 px-4 pb-6">
-                <div key={`sub-${phase}`} className="kdemo-sub-in">
-                  <div className="mb-2 flex items-center gap-1.5">
-                    <span className="flex items-center gap-1 rounded-[6px] bg-[#8B5CF6] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
-                      <span className="text-[9px] font-extrabold">k</span> Kaptik
-                    </span>
-                    <span className="text-[11px] font-medium text-white/70">Live subtitles · EN</span>
-                  </div>
-                  <div className="rounded-[14px] bg-black/55 px-3.5 py-3 backdrop-blur-sm">
-                    <div className="mb-1 flex items-center gap-1.5">
-                      <span className="rounded-[5px] bg-white/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
-                        Jimin
-                      </span>
-                    </div>
-                    <p className="text-[14px] font-medium leading-snug text-white">
-                      Did everyone wait long? We&apos;re finally live with ARMY 💜
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           )}
-
-          {/* 하단 진행 인디케이터 — 현재 단계 표시 */}
-          <div className="absolute inset-x-0 bottom-2.5 z-40 flex justify-center gap-1.5">
-            {PHASE_DURATIONS.map((_, i) => (
-              <span
-                key={i}
-                className="h-1 rounded-full transition-all duration-300"
-                style={{
-                  width: i === phase ? 18 : 6,
-                  background: i === phase ? "#FFFFFF" : "rgba(255,255,255,0.45)",
-                }}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </div>

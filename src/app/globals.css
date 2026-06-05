@@ -122,11 +122,44 @@ body {
 .kdemo-rise { animation: kdemo-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
 .kdemo-sub-in { animation: kdemo-sub-in 0.45s ease-out both; }
 
+/* ===== Link Subtitle 데모 전용 애니메이션 ===== */
+/* 5) 링크가 입력창에 '붙여넣어지듯' 살짝 떠오르며 등장 */
+@keyframes kdemo-paste-in {
+  0% { transform: translateY(6px) scale(0.96); opacity: 0; }
+  60% { transform: translateY(0) scale(1.015); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+/* 6) 로딩 진행바가 0%에서 100%로 차오름 */
+@keyframes kdemo-progress {
+  0% { width: 4%; }
+  100% { width: 100%; }
+}
+/* 7) 완료 체크가 통통 튀며 등장 */
+@keyframes kdemo-check-pop {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1.18); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* 8) 카드/패널이 부드럽게 페이드인 */
+@keyframes kdemo-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.kdemo-paste-in { animation: kdemo-paste-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.kdemo-progress { animation: kdemo-progress 2.2s cubic-bezier(0.45, 0, 0.2, 1) both; }
+.kdemo-check-pop { animation: kdemo-check-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.kdemo-fade-in { animation: kdemo-fade-in 0.4s ease-out both; }
+
 @media (prefers-reduced-motion: reduce) {
   .kdemo-notif-in,
   .kdemo-ripple,
   .kdemo-rise,
-  .kdemo-sub-in {
+  .kdemo-sub-in,
+  .kdemo-paste-in,
+  .kdemo-progress,
+  .kdemo-check-pop,
+  .kdemo-fade-in {
     animation: none;
   }
 }
