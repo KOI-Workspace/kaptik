@@ -6,7 +6,17 @@ import LanguagesDemo from "./LanguagesDemo";
 import SpeakerContextDemo from "./SpeakerContextDemo";
 import DevicesDemo from "./DevicesDemo";
 
-const solutionFeatures = [
+// 기능 카드 데이터 타입 (badge는 신뢰 강조용으로 일부 항목에만 존재)
+type SolutionFeature = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  badge?: string;
+  imageSide: "left" | "right";
+};
+
+const solutionFeatures: SolutionFeature[] = [
   {
     id: "live",
     eyebrow: "Live subtitles",
@@ -28,7 +38,8 @@ const solutionFeatures = [
     eyebrow: "Cultural context",
     title: "Catch every joke, slang, and hidden meaning your bias says.",
     description:
-      "Kaptik adds human written explanations from our teammates for jokes, slang, fandom terms, and cultural references that regular subtitles often miss.",
+      "Real Korean translators write the explanations for jokes, slang, fandom terms, and cultural references that regular subtitles often miss, so nothing gets lost.",
+    badge: "Made by Korean translators, not AI",
     imageSide: "right",
   },
   {
@@ -110,6 +121,28 @@ export default function WhyKaptik() {
               <p className="max-w-[500px] text-[15px] leading-relaxed text-[#525252] md:text-[18px] lg:text-[19px]">
                 {feature.description}
               </p>
+              {/* 신뢰 배지 — "사람(한국인)이 직접 만든다"를 강조해 AI 거부감을 상쇄 */}
+              {feature.badge && (
+                <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#E5E5E5] bg-white px-4 py-2 text-[13px] font-semibold text-[#0A0A0A] md:text-[14px]">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="shrink-0 text-[#6D28D9]"
+                    aria-hidden
+                  >
+                    <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="2" />
+                    <path
+                      d="M5 20c0-3.3 3.1-6 7-6s7 2.7 7 6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  {feature.badge}
+                </span>
+              )}
             </div>
           );
 

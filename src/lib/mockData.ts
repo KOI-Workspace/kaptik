@@ -19,7 +19,7 @@ export const faqItems = [
     id: "3",
     question: "How does Kaptik achieve high translation quality?",
     answer:
-      "Kaptik recognizes live audio, identifies who is speaking, and enhances translation with a K-pop glossary built from fandom slang and Korean expressions. Live captions may take a few seconds to appear, but you can tap any subtitle to rewind to the exact moment it started so that you never miss the conversation.",
+      "Kaptik recognizes live audio, identifies who is speaking, and enhances translation with a K-pop glossary built from fandom slang and Korean expressions. On top of that, real Korean translators add the cultural context and nuance that automatic tools miss. Live captions may take a few seconds to appear, but you can tap any subtitle to rewind to the exact moment it started so that you never miss the conversation.",
   },
 ] as const;
 

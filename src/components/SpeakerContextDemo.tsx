@@ -72,6 +72,17 @@ export default function SpeakerContextDemo() {
         </div>
 
         <div className="space-y-4 bg-[#FCFCFC] px-4 py-4 md:space-y-5 md:px-5 md:py-5">
+          {/* 해설을 한국인 번역가가 직접 단다는 점을 시각적으로 강조하는 라벨 */}
+          <div className="flex items-center gap-1.5 text-[#6D28D9]">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="shrink-0" aria-hidden>
+              <circle cx="12" cy="8" r="3.5" stroke="currentColor" strokeWidth="2" />
+              <path d="M5 20c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+            <span className="text-[11px] font-bold uppercase tracking-wide sm:text-[12px]">
+              Notes by Korean translators
+            </span>
+          </div>
+
           {dialogues.map((d) => (
             <div key={d.name}>
               <div className="mb-2 flex items-center gap-2">
