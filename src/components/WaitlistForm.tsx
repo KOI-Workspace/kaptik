@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { track } from "@vercel/analytics";
 import { getSupabaseClient } from "@/lib/supabaseClient";
 import WaitlistBubble from "./WaitlistBubble";
 
@@ -77,6 +78,8 @@ export default function WaitlistForm({
       }
 
       setEmail("");
+      // Vercel Analytics 전환 이벤트 — 신규 가입(실제 추가)만 집계해 방문 대비 가입률을 측정한다.
+      track("signup");
       // 새 이메일이 실제로 추가됐을 때만 버블 인원수를 즉시 +1 하도록 알린다.
       if (typeof window !== "undefined") {
         window.dispatchEvent(new Event("waitlist:joined"));

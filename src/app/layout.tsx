@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import MetaPixel from "@/components/MetaPixel";
 
@@ -41,6 +42,8 @@ export default function RootLayout({
       <body className="antialiased">
         <MetaPixel />
         {children}
+        {/* Vercel Analytics — 방문자 수 + signup 전환 이벤트 집계 */}
+        <Analytics />
       </body>
     </html>
   );
